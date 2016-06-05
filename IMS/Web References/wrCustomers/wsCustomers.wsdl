@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getCustomers">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCustomersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCustomersResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Server2Client">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dataTable">
+            <s:complexType>
+              <s:sequence>
+                <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="dataSet">
+            <s:complexType>
+              <s:sequence>
+                <s:element ref="s:schema" />
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getCustomersFull">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCustomersFullResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCustomersFullResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMaxID">
+        <s:complexType />
+      </s:element>
+      <s:element name="getMaxIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMaxIDResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCustomerResult" type="tns:Customer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Customer">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Balance" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="addCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cus" type="tns:Customer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addCustomerResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cus" type="tns:Customer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateCustomerResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteCustomerResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Customer_Account">
+        <s:complexType />
+      </s:element>
+      <s:element name="Customer_AccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Customer_AccountResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDefaultCustomer">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateDefaultCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateDefaultCustomerResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addTrans">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ca" type="tns:CustomerAccount" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CustomerAccount">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerAccountID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Debit" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Credit" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Balance" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="addTransResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addTransResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCustomerBalanceByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCustomerBalanceByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCustomerBalanceByIDResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCustomerBalanceByDates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtFr" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtTo" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCustomerBalanceByDatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCustomerBalanceByDatesResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTransactionDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTransactionDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTransactionDetailsResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccountStatement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtFr" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtTo" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccountStatementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountStatementResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getCustomersSoapIn">
+    <wsdl:part name="parameters" element="tns:getCustomers" />
+  </wsdl:message>
+  <wsdl:message name="getCustomersSoapOut">
+    <wsdl:part name="parameters" element="tns:getCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCustomersFullSoapIn">
+    <wsdl:part name="parameters" element="tns:getCustomersFull" />
+  </wsdl:message>
+  <wsdl:message name="getCustomersFullSoapOut">
+    <wsdl:part name="parameters" element="tns:getCustomersFullResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMaxIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getMaxID" />
+  </wsdl:message>
+  <wsdl:message name="getMaxIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getMaxIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:getCustomer" />
+  </wsdl:message>
+  <wsdl:message name="getCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:getCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="addCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:addCustomer" />
+  </wsdl:message>
+  <wsdl:message name="addCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:addCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:updateCustomer" />
+  </wsdl:message>
+  <wsdl:message name="updateCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:updateCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteCustomer" />
+  </wsdl:message>
+  <wsdl:message name="deleteCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="Customer_AccountSoapIn">
+    <wsdl:part name="parameters" element="tns:Customer_Account" />
+  </wsdl:message>
+  <wsdl:message name="Customer_AccountSoapOut">
+    <wsdl:part name="parameters" element="tns:Customer_AccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateDefaultCustomer" />
+  </wsdl:message>
+  <wsdl:message name="CreateDefaultCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateDefaultCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="addTransSoapIn">
+    <wsdl:part name="parameters" element="tns:addTrans" />
+  </wsdl:message>
+  <wsdl:message name="addTransSoapOut">
+    <wsdl:part name="parameters" element="tns:addTransResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCustomerBalanceByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getCustomerBalanceByID" />
+  </wsdl:message>
+  <wsdl:message name="getCustomerBalanceByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getCustomerBalanceByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCustomerBalanceByDatesSoapIn">
+    <wsdl:part name="parameters" element="tns:getCustomerBalanceByDates" />
+  </wsdl:message>
+  <wsdl:message name="getCustomerBalanceByDatesSoapOut">
+    <wsdl:part name="parameters" element="tns:getCustomerBalanceByDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTransactionDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:getTransactionDetails" />
+  </wsdl:message>
+  <wsdl:message name="getTransactionDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:getTransactionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccountStatementSoapIn">
+    <wsdl:part name="parameters" element="tns:AccountStatement" />
+  </wsdl:message>
+  <wsdl:message name="AccountStatementSoapOut">
+    <wsdl:part name="parameters" element="tns:AccountStatementResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsCustomersSoap">
+    <wsdl:operation name="getCustomers">
+      <wsdl:input message="tns:getCustomersSoapIn" />
+      <wsdl:output message="tns:getCustomersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCustomersFull">
+      <wsdl:input message="tns:getCustomersFullSoapIn" />
+      <wsdl:output message="tns:getCustomersFullSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMaxID">
+      <wsdl:input message="tns:getMaxIDSoapIn" />
+      <wsdl:output message="tns:getMaxIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCustomer">
+      <wsdl:input message="tns:getCustomerSoapIn" />
+      <wsdl:output message="tns:getCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addCustomer">
+      <wsdl:input message="tns:addCustomerSoapIn" />
+      <wsdl:output message="tns:addCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateCustomer">
+      <wsdl:input message="tns:updateCustomerSoapIn" />
+      <wsdl:output message="tns:updateCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCustomer">
+      <wsdl:input message="tns:deleteCustomerSoapIn" />
+      <wsdl:output message="tns:deleteCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Customer_Account">
+      <wsdl:input message="tns:Customer_AccountSoapIn" />
+      <wsdl:output message="tns:Customer_AccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultCustomer">
+      <wsdl:input message="tns:CreateDefaultCustomerSoapIn" />
+      <wsdl:output message="tns:CreateDefaultCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addTrans">
+      <wsdl:input message="tns:addTransSoapIn" />
+      <wsdl:output message="tns:addTransSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerBalanceByID">
+      <wsdl:input message="tns:getCustomerBalanceByIDSoapIn" />
+      <wsdl:output message="tns:getCustomerBalanceByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerBalanceByDates">
+      <wsdl:input message="tns:getCustomerBalanceByDatesSoapIn" />
+      <wsdl:output message="tns:getCustomerBalanceByDatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionDetails">
+      <wsdl:input message="tns:getTransactionDetailsSoapIn" />
+      <wsdl:output message="tns:getTransactionDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountStatement">
+      <wsdl:input message="tns:AccountStatementSoapIn" />
+      <wsdl:output message="tns:AccountStatementSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsCustomersSoap" type="tns:wsCustomersSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getCustomers">
+      <soap:operation soapAction="http://tempuri.org/getCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomersFull">
+      <soap:operation soapAction="http://tempuri.org/getCustomersFull" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaxID">
+      <soap:operation soapAction="http://tempuri.org/getMaxID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomer">
+      <soap:operation soapAction="http://tempuri.org/getCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addCustomer">
+      <soap:operation soapAction="http://tempuri.org/addCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCustomer">
+      <soap:operation soapAction="http://tempuri.org/updateCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCustomer">
+      <soap:operation soapAction="http://tempuri.org/deleteCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Customer_Account">
+      <soap:operation soapAction="http://tempuri.org/Customer_Account" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultCustomer">
+      <soap:operation soapAction="http://tempuri.org/CreateDefaultCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTrans">
+      <soap:operation soapAction="http://tempuri.org/addTrans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerBalanceByID">
+      <soap:operation soapAction="http://tempuri.org/getCustomerBalanceByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerBalanceByDates">
+      <soap:operation soapAction="http://tempuri.org/getCustomerBalanceByDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionDetails">
+      <soap:operation soapAction="http://tempuri.org/getTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountStatement">
+      <soap:operation soapAction="http://tempuri.org/AccountStatement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsCustomersSoap12" type="tns:wsCustomersSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getCustomers">
+      <soap12:operation soapAction="http://tempuri.org/getCustomers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomersFull">
+      <soap12:operation soapAction="http://tempuri.org/getCustomersFull" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaxID">
+      <soap12:operation soapAction="http://tempuri.org/getMaxID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomer">
+      <soap12:operation soapAction="http://tempuri.org/getCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addCustomer">
+      <soap12:operation soapAction="http://tempuri.org/addCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCustomer">
+      <soap12:operation soapAction="http://tempuri.org/updateCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCustomer">
+      <soap12:operation soapAction="http://tempuri.org/deleteCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Customer_Account">
+      <soap12:operation soapAction="http://tempuri.org/Customer_Account" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDefaultCustomer">
+      <soap12:operation soapAction="http://tempuri.org/CreateDefaultCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTrans">
+      <soap12:operation soapAction="http://tempuri.org/addTrans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerBalanceByID">
+      <soap12:operation soapAction="http://tempuri.org/getCustomerBalanceByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerBalanceByDates">
+      <soap12:operation soapAction="http://tempuri.org/getCustomerBalanceByDates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionDetails">
+      <soap12:operation soapAction="http://tempuri.org/getTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountStatement">
+      <soap12:operation soapAction="http://tempuri.org/AccountStatement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsCustomers">
+    <wsdl:port name="wsCustomersSoap" binding="tns:wsCustomersSoap">
+      <soap:address location="http://localhost:58540/wsCustomers.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsCustomersSoap12" binding="tns:wsCustomersSoap12">
+      <soap12:address location="http://localhost:58540/wsCustomers.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

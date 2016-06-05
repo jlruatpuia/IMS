@@ -34,14 +34,33 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v15.1" />
+    <Reference Include="DevExpress.Charts.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v15.1" />
+    <Reference Include="DevExpress.Images.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v15.1.Core" />
+    <Reference Include="DevExpress.RichEdit.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v15.1" />
+    <Reference Include="DevExpress.Utils.v15.1.UI, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v15.1" />
     <Reference Include="DevExpress.Sparkline.v15.1.Core" />
+    <Reference Include="DevExpress.XtraCharts.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v15.1.Extensions, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v15.1.UI, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v15.1" />
+    <Reference Include="DevExpress.XtraGauges.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v15.1.Extensions, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraWizard.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,16 +71,345 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Codes\Settings.cs" />
+    <Compile Include="Controls\ucCustomers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucCustomers.designer.cs">
+      <DependentUpon>ucCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucDashboard.designer.cs">
+      <DependentUpon>ucDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucProducts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucProducts.designer.cs">
+      <DependentUpon>ucProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucReports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucReports.designer.cs">
+      <DependentUpon>ucReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucSuppliers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucSuppliers.designer.cs">
+      <DependentUpon>ucSuppliers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\frmCategory.designer.cs">
+      <DependentUpon>frmCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCreditPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCreditPayment.designer.cs">
+      <DependentUpon>frmCreditPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCustomer.designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDebitPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDebitPayment.designer.cs">
+      <DependentUpon>frmDebitPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDeleteProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDeleteProduct.designer.cs">
+      <DependentUpon>frmDeleteProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEditProduct.designer.cs">
+      <DependentUpon>frmEditProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmExtProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmExtProduct.designer.cs">
+      <DependentUpon>frmExtProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmNewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmNewProduct.designer.cs">
+      <DependentUpon>frmNewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPurchase.designer.cs">
+      <DependentUpon>frmPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmQuickSell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmQuickSell.designer.cs">
+      <DependentUpon>frmQuickSell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRevisedInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRevisedInvoice.Designer.cs">
+      <DependentUpon>frmRevisedInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRowEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRowEdit.designer.cs">
+      <DependentUpon>frmRowEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSelect.designer.cs">
+      <DependentUpon>frmSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSelectCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSelectCustomer.designer.cs">
+      <DependentUpon>frmSelectCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSelectSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSelectSupplier.designer.cs">
+      <DependentUpon>frmSelectSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSellProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSellProduct.designer.cs">
+      <DependentUpon>frmSellProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmServicing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmServicing.Designer.cs">
+      <DependentUpon>frmServicing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSettings.designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSuppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSuppliers.designer.cs">
+      <DependentUpon>frmSuppliers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintRibbonControllerResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintRibbonControllerResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Reports\rptCashMemo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptCashMemo.designer.cs">
+      <DependentUpon>rptCashMemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptCreditPayment.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptCustomers.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptCustomerSales.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptCustomerSales.designer.cs">
+      <DependentUpon>rptCustomerSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptDebitPayment.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptPL.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptPL.designer.cs">
+      <DependentUpon>rptPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptProductByCat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptProductByCat.designer.cs">
+      <DependentUpon>rptProductByCat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptProductBySup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptProductBySup.designer.cs">
+      <DependentUpon>rptProductBySup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptPurchasedProducts.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptPurchasedProducts.designer.cs">
+      <DependentUpon>rptPurchasedProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptSalesReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptSalesReport.designer.cs">
+      <DependentUpon>rptSalesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptSoldProducts.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptSupplierPurchase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptSupplierPurchase.designer.cs">
+      <DependentUpon>rptSupplierPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptSuppliers.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptSuppliers.designer.cs">
+      <DependentUpon>rptSuppliers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+    <Compile Include="Web References\wrCustomers\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wrProducts\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wrPurchases\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wrSales\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wrSettings\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wrSuppliers\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Controls\ucCustomers.resx">
+      <DependentUpon>ucCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucDashboard.resx">
+      <DependentUpon>ucDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucProducts.resx">
+      <DependentUpon>ucProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucReports.resx">
+      <DependentUpon>ucReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucSuppliers.resx">
+      <DependentUpon>ucSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCategory.resx">
+      <DependentUpon>frmCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCreditPayment.resx">
+      <DependentUpon>frmCreditPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDebitPayment.resx">
+      <DependentUpon>frmDebitPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDeleteProduct.resx">
+      <DependentUpon>frmDeleteProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEditProduct.resx">
+      <DependentUpon>frmEditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmExtProduct.resx">
+      <DependentUpon>frmExtProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmNewProduct.resx">
+      <DependentUpon>frmNewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPurchase.resx">
+      <DependentUpon>frmPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmQuickSell.resx">
+      <DependentUpon>frmQuickSell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRevisedInvoice.resx">
+      <DependentUpon>frmRevisedInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRowEdit.resx">
+      <DependentUpon>frmRowEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSelect.resx">
+      <DependentUpon>frmSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSelectCustomer.resx">
+      <DependentUpon>frmSelectCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSelectSupplier.resx">
+      <DependentUpon>frmSelectSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSellProduct.resx">
+      <DependentUpon>frmSellProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmServicing.resx">
+      <DependentUpon>frmServicing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSuppliers.resx">
+      <DependentUpon>frmSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintRibbonControllerResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PrintRibbonControllerResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -73,6 +421,46 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\rptCashMemo.resx">
+      <DependentUpon>rptCashMemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptCreditPayment.resx">
+      <DependentUpon>rptCreditPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptCustomers.resx">
+      <DependentUpon>rptCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptCustomerSales.resx">
+      <DependentUpon>rptCustomerSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDebitPayment.resx">
+      <DependentUpon>rptDebitPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptPL.resx">
+      <DependentUpon>rptPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptProductByCat.resx">
+      <DependentUpon>rptProductByCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptProductBySup.resx">
+      <DependentUpon>rptProductBySup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptPurchasedProducts.resx">
+      <DependentUpon>rptPurchasedProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptSalesReport.resx">
+      <DependentUpon>rptSalesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptSoldProducts.resx">
+      <DependentUpon>rptSoldProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptSupplierPurchase.resx">
+      <DependentUpon>rptSupplierPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptSuppliers.resx">
+      <DependentUpon>rptSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -82,6 +470,158 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Web References\wrCustomers\Customer.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wrCustomers\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wrCustomers\Server2Client.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wrCustomers\wsCustomers.wsdl" />
+    <None Include="Web References\wrProducts\Category.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wrProducts\Product.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wrProducts\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wrProducts\Server2Client.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wrProducts\wsProducts.wsdl" />
+    <None Include="Web References\wrPurchases\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wrPurchases\Server2Client.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wrPurchases\wsPurchases.wsdl" />
+    <None Include="Web References\wrSales\Customer.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wrSales\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wrSales\Server2Client.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wrSales\wsSales.wsdl" />
+    <None Include="Web References\wrSettings\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wrSettings\wrSettings.wsdl" />
+    <None Include="Web References\wrSuppliers\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wrSuppliers\Server2Client.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wrSuppliers\Supplier.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wrSuppliers\wsSuppliers.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:58540/wrSettings.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wrSettings\</RelPath>
+      <UpdateFromURL>http://localhost:58540/wrSettings.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IMS_wrSettings_wrSettings</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:58540/wsCustomers.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wrCustomers\</RelPath>
+      <UpdateFromURL>http://localhost:58540/wsCustomers.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IMS_wrCustomers_wsCustomers</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:58540/wsProducts.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wrProducts\</RelPath>
+      <UpdateFromURL>http://localhost:58540/wsProducts.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IMS_wrProducts_wsProducts</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:58540/wsPurchases.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wrPurchases\</RelPath>
+      <UpdateFromURL>http://localhost:58540/wsPurchases.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IMS_wrPurchases_wsPurchases</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:58540/wsSales.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wrSales\</RelPath>
+      <UpdateFromURL>http://localhost:58540/wsSales.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IMS_wrSales_wsSales</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:58540/wsSuppliers.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wrSuppliers\</RelPath>
+      <UpdateFromURL>http://localhost:58540/wsSuppliers.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>IMS_wrSuppliers_wsSuppliers</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\wrProducts\wsProducts.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\wrCustomers\wsCustomers.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\wrSuppliers\wsSuppliers.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\wrSales\wsSales.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\wrPurchases\wsPurchases.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\wrSettings\wrSettings.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

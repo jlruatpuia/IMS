@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getSuppliers">
+        <s:complexType />
+      </s:element>
+      <s:element name="getSuppliersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSuppliersResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Server2Client">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dataTable">
+            <s:complexType>
+              <s:sequence>
+                <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="dataSet">
+            <s:complexType>
+              <s:sequence>
+                <s:element ref="s:schema" />
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getSuppliersFull">
+        <s:complexType />
+      </s:element>
+      <s:element name="getSuppliersFullResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSuppliersFullResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMaxID">
+        <s:complexType />
+      </s:element>
+      <s:element name="getMaxIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMaxIDResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSupplier">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSupplierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSupplierResult" type="tns:Supplier" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Supplier">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SupplierID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SupplierName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Balance" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="addSupplier">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sup" type="tns:Supplier" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addSupplierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addSupplierResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateSupplier">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sup" type="tns:Supplier" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateSupplierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateSupplierResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteSupplier">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteSupplierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteSupplierResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Supplier_Account">
+        <s:complexType />
+      </s:element>
+      <s:element name="Supplier_AccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Supplier_AccountResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addTrans">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ca" type="tns:SupplierAccount" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SupplierAccount">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SupplierAccountID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SupplierID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Debit" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Credit" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Balance" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="addTransResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addTransResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSupplierBalanceByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SupplierID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSupplierBalanceByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSupplierBalanceByIDResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSupplierOpeningBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SupplierID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSupplierOpeningBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSupplierOpeningBalanceResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSupplierBalanceByDates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SupplierID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtFr" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtTo" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSupplierBalanceByDatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSupplierBalanceByDatesResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTransactionDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SupplierID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTransactionDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTransactionDetailsResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccountStatement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SupplierID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtFr" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtTo" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccountStatementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountStatementResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getSuppliersSoapIn">
+    <wsdl:part name="parameters" element="tns:getSuppliers" />
+  </wsdl:message>
+  <wsdl:message name="getSuppliersSoapOut">
+    <wsdl:part name="parameters" element="tns:getSuppliersResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSuppliersFullSoapIn">
+    <wsdl:part name="parameters" element="tns:getSuppliersFull" />
+  </wsdl:message>
+  <wsdl:message name="getSuppliersFullSoapOut">
+    <wsdl:part name="parameters" element="tns:getSuppliersFullResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMaxIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getMaxID" />
+  </wsdl:message>
+  <wsdl:message name="getMaxIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getMaxIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSupplierSoapIn">
+    <wsdl:part name="parameters" element="tns:getSupplier" />
+  </wsdl:message>
+  <wsdl:message name="getSupplierSoapOut">
+    <wsdl:part name="parameters" element="tns:getSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="addSupplierSoapIn">
+    <wsdl:part name="parameters" element="tns:addSupplier" />
+  </wsdl:message>
+  <wsdl:message name="addSupplierSoapOut">
+    <wsdl:part name="parameters" element="tns:addSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateSupplierSoapIn">
+    <wsdl:part name="parameters" element="tns:updateSupplier" />
+  </wsdl:message>
+  <wsdl:message name="updateSupplierSoapOut">
+    <wsdl:part name="parameters" element="tns:updateSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteSupplierSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteSupplier" />
+  </wsdl:message>
+  <wsdl:message name="deleteSupplierSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="Supplier_AccountSoapIn">
+    <wsdl:part name="parameters" element="tns:Supplier_Account" />
+  </wsdl:message>
+  <wsdl:message name="Supplier_AccountSoapOut">
+    <wsdl:part name="parameters" element="tns:Supplier_AccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="addTransSoapIn">
+    <wsdl:part name="parameters" element="tns:addTrans" />
+  </wsdl:message>
+  <wsdl:message name="addTransSoapOut">
+    <wsdl:part name="parameters" element="tns:addTransResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSupplierBalanceByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getSupplierBalanceByID" />
+  </wsdl:message>
+  <wsdl:message name="getSupplierBalanceByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getSupplierBalanceByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSupplierOpeningBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:getSupplierOpeningBalance" />
+  </wsdl:message>
+  <wsdl:message name="getSupplierOpeningBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:getSupplierOpeningBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSupplierBalanceByDatesSoapIn">
+    <wsdl:part name="parameters" element="tns:getSupplierBalanceByDates" />
+  </wsdl:message>
+  <wsdl:message name="getSupplierBalanceByDatesSoapOut">
+    <wsdl:part name="parameters" element="tns:getSupplierBalanceByDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTransactionDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:getTransactionDetails" />
+  </wsdl:message>
+  <wsdl:message name="getTransactionDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:getTransactionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccountStatementSoapIn">
+    <wsdl:part name="parameters" element="tns:AccountStatement" />
+  </wsdl:message>
+  <wsdl:message name="AccountStatementSoapOut">
+    <wsdl:part name="parameters" element="tns:AccountStatementResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsSuppliersSoap">
+    <wsdl:operation name="getSuppliers">
+      <wsdl:input message="tns:getSuppliersSoapIn" />
+      <wsdl:output message="tns:getSuppliersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSuppliersFull">
+      <wsdl:input message="tns:getSuppliersFullSoapIn" />
+      <wsdl:output message="tns:getSuppliersFullSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMaxID">
+      <wsdl:input message="tns:getMaxIDSoapIn" />
+      <wsdl:output message="tns:getMaxIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSupplier">
+      <wsdl:input message="tns:getSupplierSoapIn" />
+      <wsdl:output message="tns:getSupplierSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addSupplier">
+      <wsdl:input message="tns:addSupplierSoapIn" />
+      <wsdl:output message="tns:addSupplierSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateSupplier">
+      <wsdl:input message="tns:updateSupplierSoapIn" />
+      <wsdl:output message="tns:updateSupplierSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteSupplier">
+      <wsdl:input message="tns:deleteSupplierSoapIn" />
+      <wsdl:output message="tns:deleteSupplierSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Supplier_Account">
+      <wsdl:input message="tns:Supplier_AccountSoapIn" />
+      <wsdl:output message="tns:Supplier_AccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addTrans">
+      <wsdl:input message="tns:addTransSoapIn" />
+      <wsdl:output message="tns:addTransSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSupplierBalanceByID">
+      <wsdl:input message="tns:getSupplierBalanceByIDSoapIn" />
+      <wsdl:output message="tns:getSupplierBalanceByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSupplierOpeningBalance">
+      <wsdl:input message="tns:getSupplierOpeningBalanceSoapIn" />
+      <wsdl:output message="tns:getSupplierOpeningBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSupplierBalanceByDates">
+      <wsdl:input message="tns:getSupplierBalanceByDatesSoapIn" />
+      <wsdl:output message="tns:getSupplierBalanceByDatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionDetails">
+      <wsdl:input message="tns:getTransactionDetailsSoapIn" />
+      <wsdl:output message="tns:getTransactionDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountStatement">
+      <wsdl:input message="tns:AccountStatementSoapIn" />
+      <wsdl:output message="tns:AccountStatementSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsSuppliersSoap" type="tns:wsSuppliersSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getSuppliers">
+      <soap:operation soapAction="http://tempuri.org/getSuppliers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSuppliersFull">
+      <soap:operation soapAction="http://tempuri.org/getSuppliersFull" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaxID">
+      <soap:operation soapAction="http://tempuri.org/getMaxID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSupplier">
+      <soap:operation soapAction="http://tempuri.org/getSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSupplier">
+      <soap:operation soapAction="http://tempuri.org/addSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSupplier">
+      <soap:operation soapAction="http://tempuri.org/updateSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSupplier">
+      <soap:operation soapAction="http://tempuri.org/deleteSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Supplier_Account">
+      <soap:operation soapAction="http://tempuri.org/Supplier_Account" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTrans">
+      <soap:operation soapAction="http://tempuri.org/addTrans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSupplierBalanceByID">
+      <soap:operation soapAction="http://tempuri.org/getSupplierBalanceByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSupplierOpeningBalance">
+      <soap:operation soapAction="http://tempuri.org/getSupplierOpeningBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSupplierBalanceByDates">
+      <soap:operation soapAction="http://tempuri.org/getSupplierBalanceByDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionDetails">
+      <soap:operation soapAction="http://tempuri.org/getTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountStatement">
+      <soap:operation soapAction="http://tempuri.org/AccountStatement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsSuppliersSoap12" type="tns:wsSuppliersSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getSuppliers">
+      <soap12:operation soapAction="http://tempuri.org/getSuppliers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSuppliersFull">
+      <soap12:operation soapAction="http://tempuri.org/getSuppliersFull" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaxID">
+      <soap12:operation soapAction="http://tempuri.org/getMaxID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSupplier">
+      <soap12:operation soapAction="http://tempuri.org/getSupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSupplier">
+      <soap12:operation soapAction="http://tempuri.org/addSupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSupplier">
+      <soap12:operation soapAction="http://tempuri.org/updateSupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSupplier">
+      <soap12:operation soapAction="http://tempuri.org/deleteSupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Supplier_Account">
+      <soap12:operation soapAction="http://tempuri.org/Supplier_Account" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTrans">
+      <soap12:operation soapAction="http://tempuri.org/addTrans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSupplierBalanceByID">
+      <soap12:operation soapAction="http://tempuri.org/getSupplierBalanceByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSupplierOpeningBalance">
+      <soap12:operation soapAction="http://tempuri.org/getSupplierOpeningBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSupplierBalanceByDates">
+      <soap12:operation soapAction="http://tempuri.org/getSupplierBalanceByDates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionDetails">
+      <soap12:operation soapAction="http://tempuri.org/getTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountStatement">
+      <soap12:operation soapAction="http://tempuri.org/AccountStatement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsSuppliers">
+    <wsdl:port name="wsSuppliersSoap" binding="tns:wsSuppliersSoap">
+      <soap:address location="http://localhost:58540/wsSuppliers.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsSuppliersSoap12" binding="tns:wsSuppliersSoap12">
+      <soap12:address location="http://localhost:58540/wsSuppliers.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

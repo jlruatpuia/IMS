@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
-namespace IMS
+namespace IMS.Forms
 {
-    public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class frmServicing : DevExpress.XtraEditors.XtraForm
     {
-        public Form1()
+        public frmServicing()
         {
             InitializeComponent();
         }

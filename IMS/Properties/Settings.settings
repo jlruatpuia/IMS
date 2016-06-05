@@ -1,7 +1,48 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="IMS.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="IMS_wrProducts_wsProducts" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:58540/wsProducts.asmx</Value>
+    </Setting>
+    <Setting Name="IMS_wrCustomers_wsCustomers" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:58540/wsCustomers.asmx</Value>
+    </Setting>
+    <Setting Name="IMS_wrSuppliers_wsSuppliers" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:58540/wsSuppliers.asmx</Value>
+    </Setting>
+    <Setting Name="IMS_wrSales_wsSales" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:58540/wsSales.asmx</Value>
+    </Setting>
+    <Setting Name="IMS_wrPurchases_wsPurchases" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:58540/wsPurchases.asmx</Value>
+    </Setting>
+    <Setting Name="WindowTheme" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="WindowGeometry" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="IMS_wrSettings_wrSettings" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:58540/wrSettings.asmx</Value>
+    </Setting>
+    <Setting Name="ShortName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ShopName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Address" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Phone" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Email" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Website" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
 </SettingsFile>

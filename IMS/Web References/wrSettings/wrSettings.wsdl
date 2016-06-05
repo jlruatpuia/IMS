@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetInvoiceNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dt" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Table" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShortName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInvoiceNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInvoiceNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQuickInvoiceNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dt" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShortName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQuickInvoiceNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQuickInvoiceNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceInvoiceNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dt" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShortName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceInvoiceNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServiceInvoiceNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetInvoiceNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInvoiceNo" />
+  </wsdl:message>
+  <wsdl:message name="GetInvoiceNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInvoiceNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQuickInvoiceNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQuickInvoiceNo" />
+  </wsdl:message>
+  <wsdl:message name="GetQuickInvoiceNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQuickInvoiceNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceInvoiceNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServiceInvoiceNo" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceInvoiceNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServiceInvoiceNoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wrSettingsSoap">
+    <wsdl:operation name="GetInvoiceNo">
+      <wsdl:input message="tns:GetInvoiceNoSoapIn" />
+      <wsdl:output message="tns:GetInvoiceNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuickInvoiceNo">
+      <wsdl:input message="tns:GetQuickInvoiceNoSoapIn" />
+      <wsdl:output message="tns:GetQuickInvoiceNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceInvoiceNo">
+      <wsdl:input message="tns:GetServiceInvoiceNoSoapIn" />
+      <wsdl:output message="tns:GetServiceInvoiceNoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wrSettingsSoap" type="tns:wrSettingsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetInvoiceNo">
+      <soap:operation soapAction="http://tempuri.org/GetInvoiceNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuickInvoiceNo">
+      <soap:operation soapAction="http://tempuri.org/GetQuickInvoiceNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceInvoiceNo">
+      <soap:operation soapAction="http://tempuri.org/GetServiceInvoiceNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wrSettingsSoap12" type="tns:wrSettingsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetInvoiceNo">
+      <soap12:operation soapAction="http://tempuri.org/GetInvoiceNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuickInvoiceNo">
+      <soap12:operation soapAction="http://tempuri.org/GetQuickInvoiceNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceInvoiceNo">
+      <soap12:operation soapAction="http://tempuri.org/GetServiceInvoiceNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wrSettings">
+    <wsdl:port name="wrSettingsSoap" binding="tns:wrSettingsSoap">
+      <soap:address location="http://localhost:58540/wrSettings.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wrSettingsSoap12" binding="tns:wrSettingsSoap12">
+      <soap12:address location="http://localhost:58540/wrSettings.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
