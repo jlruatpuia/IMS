@@ -134,3 +134,12 @@ public class User
     public int AccountType { get; set; }
     public bool Active { get; set; }
 }
+
+public class Servicing
+{
+    public int ID { get; set; }
+    public string InvoiceNo { get; set; }
+    public DateTime ServiceDate { get; set; }
+    public string Description { get; set; }
+    public double Amount { get; set; }
+}

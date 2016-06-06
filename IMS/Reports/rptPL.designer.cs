@@ -248,7 +248,7 @@
             this.xrLabel5.SizeF = new System.Drawing.SizeF(576.9999F, 24.99999F);
             this.xrLabel5.StylePriority.UseFont = false;
             this.xrLabel5.StylePriority.UseTextAlignment = false;
-            this.xrLabel5.Text = "Phone - 9862310857";
+            this.xrLabel5.Text = "Phone : 0389-2342228";
             this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel4

@@ -79,6 +79,10 @@
             this.lbTPM = new DevExpress.XtraReports.UI.XRTableCell();
             this.lbTBL = new DevExpress.XtraReports.UI.XRTableCell();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
+            this.xrTable4 = new DevExpress.XtraReports.UI.XRTable();
+            this.xrTableRow4 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.lbSVC = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrLine4 = new DevExpress.XtraReports.UI.XRLine();
             this.xrTable3 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow3 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -89,14 +93,10 @@
             this.lbGBL = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrControlStyle1 = new DevExpress.XtraReports.UI.XRControlStyle();
             this.grpSDT = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.xrTable4 = new DevExpress.XtraReports.UI.XRTable();
-            this.xrTableRow4 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.lbSVC = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -394,7 +394,7 @@
             this.xrLabel5.SizeF = new System.Drawing.SizeF(627F, 24.99999F);
             this.xrLabel5.StylePriority.UseFont = false;
             this.xrLabel5.StylePriority.UseTextAlignment = false;
-            this.xrLabel5.Text = "Phone - 9862310857";
+            this.xrLabel5.Text = "Phone : 0389-2342228";
             this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel1
@@ -673,6 +673,40 @@
             this.ReportFooter.HeightF = 27.08334F;
             this.ReportFooter.Name = "ReportFooter";
             // 
+            // xrTable4
+            // 
+            this.xrTable4.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.xrTable4.LocationFloat = new DevExpress.Utils.PointFloat(0F, 2.083333F);
+            this.xrTable4.Name = "xrTable4";
+            this.xrTable4.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
+            this.xrTableRow4});
+            this.xrTable4.SizeF = new System.Drawing.SizeF(224.7036F, 25F);
+            this.xrTable4.StylePriority.UseFont = false;
+            // 
+            // xrTableRow4
+            // 
+            this.xrTableRow4.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell7,
+            this.lbSVC});
+            this.xrTableRow4.Name = "xrTableRow4";
+            this.xrTableRow4.Weight = 1D;
+            // 
+            // xrTableCell7
+            // 
+            this.xrTableCell7.Name = "xrTableCell7";
+            this.xrTableCell7.StylePriority.UseTextAlignment = false;
+            this.xrTableCell7.Text = "Servicing:";
+            this.xrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrTableCell7.Weight = 1.1562786178887208D;
+            // 
+            // lbSVC
+            // 
+            this.lbSVC.Name = "lbSVC";
+            this.lbSVC.StylePriority.UseTextAlignment = false;
+            this.lbSVC.Text = "lbSVC";
+            this.lbSVC.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.lbSVC.Weight = 1.1420453627806804D;
+            // 
             // xrLine4
             // 
             this.xrLine4.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
@@ -748,40 +782,6 @@
             this.grpSDT.Level = 1;
             this.grpSDT.Name = "grpSDT";
             // 
-            // xrTable4
-            // 
-            this.xrTable4.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.xrTable4.LocationFloat = new DevExpress.Utils.PointFloat(0F, 2.083333F);
-            this.xrTable4.Name = "xrTable4";
-            this.xrTable4.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
-            this.xrTableRow4});
-            this.xrTable4.SizeF = new System.Drawing.SizeF(224.7036F, 25F);
-            this.xrTable4.StylePriority.UseFont = false;
-            // 
-            // xrTableRow4
-            // 
-            this.xrTableRow4.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.xrTableCell7,
-            this.lbSVC});
-            this.xrTableRow4.Name = "xrTableRow4";
-            this.xrTableRow4.Weight = 1D;
-            // 
-            // xrTableCell7
-            // 
-            this.xrTableCell7.Name = "xrTableCell7";
-            this.xrTableCell7.StylePriority.UseTextAlignment = false;
-            this.xrTableCell7.Text = "Servicing:";
-            this.xrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.xrTableCell7.Weight = 1.1562786178887208D;
-            // 
-            // lbSVC
-            // 
-            this.lbSVC.Name = "lbSVC";
-            this.lbSVC.StylePriority.UseTextAlignment = false;
-            this.lbSVC.Text = "lbSVC";
-            this.lbSVC.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.lbSVC.Weight = 1.1420453627806804D;
-            // 
             // rptProductSold
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -805,8 +805,8 @@
             this.Version = "15.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }

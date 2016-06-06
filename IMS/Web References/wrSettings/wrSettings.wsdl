@@ -33,16 +33,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="ConnString">
-        <s:complexType />
-      </s:element>
-      <s:element name="ConnStringResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ConnStringResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="GetServiceInvoiceNo">
         <s:complexType>
           <s:sequence>
@@ -61,7 +51,7 @@
       <s:element name="AddServicing">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="sv" type="tns:Servicing" />
+            <s:element minOccurs="0" maxOccurs="1" name="s" type="tns:Servicing" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -107,7 +97,7 @@
       <s:element name="GetServicingByDate">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="dtfr" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dt" type="s:dateTime" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -121,8 +111,8 @@
       <s:element name="GetServicingByDates">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="dtfr" type="s:dateTime" />
-            <s:element minOccurs="1" maxOccurs="1" name="dtto" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtFR" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtTO" type="s:dateTime" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -146,12 +136,6 @@
   </wsdl:message>
   <wsdl:message name="GetQuickInvoiceNoSoapOut">
     <wsdl:part name="parameters" element="tns:GetQuickInvoiceNoResponse" />
-  </wsdl:message>
-  <wsdl:message name="ConnStringSoapIn">
-    <wsdl:part name="parameters" element="tns:ConnString" />
-  </wsdl:message>
-  <wsdl:message name="ConnStringSoapOut">
-    <wsdl:part name="parameters" element="tns:ConnStringResponse" />
   </wsdl:message>
   <wsdl:message name="GetServiceInvoiceNoSoapIn">
     <wsdl:part name="parameters" element="tns:GetServiceInvoiceNo" />
@@ -186,10 +170,6 @@
       <wsdl:input message="tns:GetQuickInvoiceNoSoapIn" />
       <wsdl:output message="tns:GetQuickInvoiceNoSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="ConnString">
-      <wsdl:input message="tns:ConnStringSoapIn" />
-      <wsdl:output message="tns:ConnStringSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="GetServiceInvoiceNo">
       <wsdl:input message="tns:GetServiceInvoiceNoSoapIn" />
       <wsdl:output message="tns:GetServiceInvoiceNoSoapOut" />
@@ -220,15 +200,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetQuickInvoiceNo">
       <soap:operation soapAction="http://tempuri.org/GetQuickInvoiceNo" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ConnString">
-      <soap:operation soapAction="http://tempuri.org/ConnString" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -286,15 +257,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetQuickInvoiceNo">
       <soap12:operation soapAction="http://tempuri.org/GetQuickInvoiceNo" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ConnString">
-      <soap12:operation soapAction="http://tempuri.org/ConnString" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -15,6 +15,7 @@ namespace IMS.Forms
     {
         //wrSettings.Server2Client sc = new wrSettings.Server2Client();
         //wrSettings.wrSettings stg = new wrSettings.wrSettings();
+        
         wrSettings.Servicing s = new wrSettings.Servicing();
         public frmServicing()
         {

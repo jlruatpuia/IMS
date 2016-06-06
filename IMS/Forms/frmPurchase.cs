@@ -221,7 +221,7 @@ namespace IMS.Forms
             
             s.SupplierID  = Convert.ToInt32(lueSUP.EditValue);
             s.TransDate = dtpPDT.DateTime;
-            s.Description = "Invoice No " + txtINV.Text;
+            s.Description = txtINV.Text;
             s.Debit = Convert.ToDouble(txtAMT.EditValue);
             s.Credit = Convert.ToDouble(txtPAM.EditValue);
             s.Balance = SupplierBalance + Convert.ToDouble(txtBAL.Text);
@@ -339,7 +339,7 @@ namespace IMS.Forms
             //txtAMT.EditValue = colAMT.SummaryText;
             double TotalAmount = Convert.ToDouble(colAMT.SummaryText);
             txtAMT.Text = TotalAmount.ToString();
-            txtPAM.Text = TotalAmount.ToString();
+            txtBAL.Text = TotalAmount.ToString();
         }
 
         private void btnAdd2_Click(object sender, EventArgs e)

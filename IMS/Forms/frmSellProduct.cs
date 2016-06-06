@@ -379,13 +379,15 @@ namespace IMS.Forms
                     rpt.lblDSC.Text = "";
                 }
                 
-                rpt.lblTTL.Text = s.Amount.ToString("c2");
-                rpt.lblAMW.Text = "Rupees " + Utils.NumbersToWords(Convert.ToInt32(s.Payment)) + " only";
+                rpt.lblTTL.Text = (s.Amount - s.Discount).ToString("c2");
+                rpt.lblAMW.Text = "Rupees " + Utils.NumbersToWords(Convert.ToInt32(s.Amount - s.Discount)) + " only";
 
                 rpt.ShowPreviewDialog();
 
             }
             grd.DataSource = null;
+            dt = new DataTable();
+            InitDataTable();
             InitInvoiceNo();
             lueCAT.EditValue = null;
             luePNM.EditValue = null;
@@ -406,7 +408,7 @@ namespace IMS.Forms
 
 
                 scc = cus.getCustomerBalanceByID(CID);
-                CustomerBalance = sc.Value;
+                CustomerBalance = scc.Value;
 
                 cc = cus.getCustomer(CID);
 

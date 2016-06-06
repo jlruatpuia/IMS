@@ -163,19 +163,19 @@ namespace IMS
                file = fbd.SelectedPath + "\\DB_BACKUP_" + DateTime.Now.Day.ToString("00") + DateTime.Now.Month.ToString("00") + DateTime.Now.Year.ToString() + ".sql";
             }
             wrSettings.wrSettings stg = new wrSettings.wrSettings();
-            constring = stg.ConnString();
+            //constring = stg.ConnString();
             
             using (MySqlConnection conn = new MySqlConnection(constring))
             {
                 using (MySqlCommand cmd = new MySqlCommand())
                 {
-                    using (MySqlBackup mb = new MySqlBackup(cmd))
-                    {
-                        cmd.Connection = conn;
-                        conn.Open();
-                        mb.ExportToFile(file);
-                        conn.Close();
-                    }
+                    //using (MySqlBackup mb = new MySqlBackup(cmd))
+                    //{
+                    //    cmd.Connection = conn;
+                    //    conn.Open();
+                    //    mb.ExportToFile(file);
+                    //    conn.Close();
+                    //}
                 }
             }
         }
@@ -190,21 +190,21 @@ namespace IMS
                 //File.Copy(sfd.FileName, Application.StartupPath + "/ims.mdb", true);
                 file = sfd.FileName;
             }
-            string constring = stg.ConnString();
+            //string constring = stg.ConnString();
             //string file = "C:\\backup.sql";
-            using (MySqlConnection conn = new MySqlConnection(constring))
-            {
-                using (MySqlCommand cmd = new MySqlCommand())
-                {
-                    using (MySqlBackup mb = new MySqlBackup(cmd))
-                    {
-                        cmd.Connection = conn;
-                        conn.Open();
-                        mb.ImportFromFile(file);
-                        conn.Close();
-                    }
-                }
-            }
+            //using (MySqlConnection conn = new MySqlConnection(constring))
+            //{
+            //    using (MySqlCommand cmd = new MySqlCommand())
+            //    {
+            //        //using (MySqlBackup mb = new MySqlBackup(cmd))
+            //        //{
+            //        //    cmd.Connection = conn;
+            //        //    conn.Open();
+            //        //    mb.ImportFromFile(file);
+            //        //    conn.Close();
+            //        //}
+            //    }
+            //}
         }
 
         private void bQuickSell_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

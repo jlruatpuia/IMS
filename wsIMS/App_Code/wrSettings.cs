@@ -155,4 +155,55 @@ public class wrSettings : System.Web.Services.WebService
         return ShortName + "/SV/" + yr + "/" + (inv_no + 1).ToString("0000");
     }
 
+    [WebMethod]
+    public Server2Client AddServicing(Servicing s)
+    {
+        Server2Client sc = new Server2Client();
+        MySqlCommand cmd = new MySqlCommand("INSERT INTO service(InvoiceNo, ServiceDate, Description, Amount) VALUES(@INV, @SDT, @DSC, @AMT)", cm);
+        cmd.Parameters.AddWithValue("@INV", s.InvoiceNo);
+        cmd.Parameters.AddWithValue("@SDT", s.ServiceDate);
+        cmd.Parameters.AddWithValue("@DSC", s.Description);
+        cmd.Parameters.AddWithValue("@AMT", s.Amount);
+        try
+        {
+            cm.Open();
+            cmd.ExecuteNonQuery();
+        }
+        catch(Exception ex) { sc.Message = ex.Message; }
+        finally { cm.Close(); }
+        return sc;
+    }
+
+    [WebMethod]
+    public double GetServicingByDate(DateTime dt)
+    {
+        string Dt = Settings.getDate(dt);
+        double svc = 0;
+        MySqlCommand cmd = new MySqlCommand("SELECT SUM(Amount) FROM service WHERE ServiceDate='" + Dt + "'", cm);
+        try
+        {
+            cm.Open();
+            svc = Convert.ToDouble(cmd.ExecuteScalar());
+        }
+        catch { svc = 0; }
+        finally { cm.Close(); }
+        return svc;
+    }
+
+    [WebMethod]
+    public double GetServicingByDates(DateTime dtFR, DateTime dtTO)
+    {
+        string df = Settings.getDate(dtFR);
+        string dt = Settings.getDate(dtTO);
+        double svc = 0;
+        MySqlCommand cmd = new MySqlCommand("SELECT SUM(Amount) FROM service WHERE ServiceDate BETWEEN '" + df + "' AND '" + dt + "'", cm);
+        try
+        {
+            cm.Open();
+            svc = Convert.ToDouble(cmd.ExecuteScalar());
+        }
+        catch { svc = 0; }
+        finally { cm.Close(); }
+        return svc;
+    }
 }

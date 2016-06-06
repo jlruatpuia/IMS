@@ -279,7 +279,7 @@ public class wsSuppliers : System.Web.Services.WebService
     public Server2Client getTransactionDetails(int SupplierID)
     {
         sc = new Server2Client();
-        MySqlCommand cmd = new MySqlCommand("SELECT Supplier.SupplierName, Supplier.Address, Supplier.Phone, Supplier.Email, SupplierAccount.TransDate, SupplierAccount.Description, iif([SupplierAccount.Debit] = 0, Null, [SupplierAccount.Debit]) AS Debit, iif([SupplierAccount.Credit] = 0, Null, [SupplierAccount.Credit]) AS Credit, SupplierAccount.Balance FROM Supplier INNER JOIN SupplierAccount ON Supplier.ID = SupplierAccount.SupplierID WHERE SupplierID=" + SupplierID, cm);
+        MySqlCommand cmd = new MySqlCommand("SELECT Supplier.SupplierName, Supplier.Address, Supplier.Phone, Supplier.Email, SupplierAccount.TransDate, SupplierAccount.Description, CASE WHEN SupplierAccount.Debit = 0 THEN Null ELSE SupplierAccount.Debit END AS Debit, CASE WHEN SupplierAccount.Credit = 0 THEN Null ELSE SupplierAccount.Credit END AS Credit, SupplierAccount.Balance FROM Supplier INNER JOIN SupplierAccount ON Supplier.ID = SupplierAccount.SupplierID WHERE SupplierID=" + SupplierID, cm);
         MySqlDataAdapter da = new MySqlDataAdapter(cmd);
         DataSet ds = new DataSet();
         da.Fill(ds);
@@ -301,7 +301,7 @@ public class wsSuppliers : System.Web.Services.WebService
         dt.Columns.Add("Balance", typeof(double));
         string dtf = dtFr.Date.Month.ToString("00") + "/" + dtFr.Date.Day.ToString("00") + "/" + dtFr.Date.Year.ToString();
         string dtt = dtTo.Date.Month.ToString("00") + "/" + dtTo.Date.Day.ToString("00") + "/" + dtTo.Date.Year.ToString();
-        MySqlCommand cmd = new MySqlCommand("SELECT Sum(Debit)-Sum(Credit) AS OpeningBalance FROM SupplierAccount WHERE SupplierID=" + SupplierID + " AND TransDate < #" + dtf + "#", cm);
+        MySqlCommand cmd = new MySqlCommand("SELECT Sum(Debit)-Sum(Credit) AS OpeningBalance FROM SupplierAccount WHERE SupplierID=" + SupplierID + " AND TransDate < '" + dtf + "'", cm);
         double OpeningBalance = 0;
         try
         {
@@ -319,7 +319,7 @@ public class wsSuppliers : System.Web.Services.WebService
 
         dt.Rows.Add(dtFr, "Opening Balance", OpeningBalance, 0, OpeningBalance);
 
-        cmd = new MySqlCommand("SELECT TransDate, Description, IIf(Debit=0,'',Debit) AS Dr, IIf(Credit=0,'',Credit) AS Cr, Balance FROM SupplierAccount WHERE SupplierID=" + SupplierID + " AND SupplierAccount.TransDate BETWEEN #" + dtf + "# AND #" + dtt + "#", cm);
+        cmd = new MySqlCommand("SELECT TransDate, Description, CASE WHEN Debit=0 THEN NULL ELSE Debit END AS Dr,  CASE WHEN Credit=0 THEN NULL ELSE Credit END AS Cr, Balance FROM SupplierAccount WHERE SupplierID=" + SupplierID + " AND SupplierAccount.TransDate BETWEEN '" + dtf + "' AND '" + dtt + "'", cm);
 
         MySqlDataAdapter da = new MySqlDataAdapter(cmd);
         DataSet ds = new DataSet();

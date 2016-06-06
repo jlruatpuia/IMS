@@ -28,9 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptSalesReport));
             DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptSalesReport));
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.lbBCD = new DevExpress.XtraReports.UI.XRLabel();
+            this.lbBAL = new DevExpress.XtraReports.UI.XRLabel();
+            this.lbPAM = new DevExpress.XtraReports.UI.XRLabel();
+            this.lbPRC = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lbPNM = new DevExpress.XtraReports.UI.XRLabel();
+            this.lbQTY = new DevExpress.XtraReports.UI.XRLabel();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
@@ -47,28 +54,21 @@
             this.xrTableCell14 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell4 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
             this.lbSDT = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
-            this.lbPNM = new DevExpress.XtraReports.UI.XRLabel();
-            this.lbQTY = new DevExpress.XtraReports.UI.XRLabel();
-            this.lbPRC = new DevExpress.XtraReports.UI.XRLabel();
-            this.lbPAM = new DevExpress.XtraReports.UI.XRLabel();
-            this.lbBAL = new DevExpress.XtraReports.UI.XRLabel();
-            this.lbBCD = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
+            this.xrLine2 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLabel12 = new DevExpress.XtraReports.UI.XRLabel();
             this.lbSPR = new DevExpress.XtraReports.UI.XRLabel();
             this.lbSPA = new DevExpress.XtraReports.UI.XRLabel();
             this.lbSBL = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLine2 = new DevExpress.XtraReports.UI.XRLine();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.lbGBL = new DevExpress.XtraReports.UI.XRLabel();
             this.lbGPA = new DevExpress.XtraReports.UI.XRLabel();
@@ -94,6 +94,184 @@
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // lbBCD
+            // 
+            this.lbBCD.BackColor = System.Drawing.Color.Transparent;
+            this.lbBCD.BorderColor = System.Drawing.Color.Black;
+            this.lbBCD.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
+            this.lbBCD.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.lbBCD.BorderWidth = 1F;
+            this.lbBCD.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.lbBCD.ForeColor = System.Drawing.Color.Black;
+            this.lbBCD.LocationFloat = new DevExpress.Utils.PointFloat(70.63544F, 25F);
+            this.lbBCD.Name = "lbBCD";
+            this.lbBCD.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbBCD.SizeF = new System.Drawing.SizeF(264.2709F, 18F);
+            this.lbBCD.StylePriority.UseBackColor = false;
+            this.lbBCD.StylePriority.UseBorderColor = false;
+            this.lbBCD.StylePriority.UseBorderDashStyle = false;
+            this.lbBCD.StylePriority.UseBorders = false;
+            this.lbBCD.StylePriority.UseBorderWidth = false;
+            this.lbBCD.StylePriority.UseFont = false;
+            this.lbBCD.StylePriority.UseForeColor = false;
+            this.lbBCD.StylePriority.UsePadding = false;
+            this.lbBCD.StylePriority.UseTextAlignment = false;
+            this.lbBCD.Text = "xrTableCell9";
+            this.lbBCD.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // lbBAL
+            // 
+            this.lbBAL.BackColor = System.Drawing.Color.Transparent;
+            this.lbBAL.BorderColor = System.Drawing.Color.Black;
+            this.lbBAL.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
+            this.lbBAL.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.lbBAL.BorderWidth = 1F;
+            this.lbBAL.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.lbBAL.ForeColor = System.Drawing.Color.Black;
+            this.lbBAL.LocationFloat = new DevExpress.Utils.PointFloat(591.4766F, 0F);
+            this.lbBAL.Name = "lbBAL";
+            this.lbBAL.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbBAL.SizeF = new System.Drawing.SizeF(88.52344F, 25F);
+            this.lbBAL.StylePriority.UseBackColor = false;
+            this.lbBAL.StylePriority.UseBorderColor = false;
+            this.lbBAL.StylePriority.UseBorderDashStyle = false;
+            this.lbBAL.StylePriority.UseBorders = false;
+            this.lbBAL.StylePriority.UseBorderWidth = false;
+            this.lbBAL.StylePriority.UseFont = false;
+            this.lbBAL.StylePriority.UseForeColor = false;
+            this.lbBAL.StylePriority.UsePadding = false;
+            this.lbBAL.StylePriority.UseTextAlignment = false;
+            this.lbBAL.Text = "xrTableCell10";
+            this.lbBAL.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // lbPAM
+            // 
+            this.lbPAM.BackColor = System.Drawing.Color.Transparent;
+            this.lbPAM.BorderColor = System.Drawing.Color.Black;
+            this.lbPAM.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
+            this.lbPAM.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.lbPAM.BorderWidth = 1F;
+            this.lbPAM.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.lbPAM.ForeColor = System.Drawing.Color.Black;
+            this.lbPAM.LocationFloat = new DevExpress.Utils.PointFloat(495.9532F, 0F);
+            this.lbPAM.Name = "lbPAM";
+            this.lbPAM.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbPAM.SizeF = new System.Drawing.SizeF(88.52344F, 25F);
+            this.lbPAM.StylePriority.UseBackColor = false;
+            this.lbPAM.StylePriority.UseBorderColor = false;
+            this.lbPAM.StylePriority.UseBorderDashStyle = false;
+            this.lbPAM.StylePriority.UseBorders = false;
+            this.lbPAM.StylePriority.UseBorderWidth = false;
+            this.lbPAM.StylePriority.UseFont = false;
+            this.lbPAM.StylePriority.UseForeColor = false;
+            this.lbPAM.StylePriority.UsePadding = false;
+            this.lbPAM.StylePriority.UseTextAlignment = false;
+            this.lbPAM.Text = "xrTableCell10";
+            this.lbPAM.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // lbPRC
+            // 
+            this.lbPRC.BackColor = System.Drawing.Color.Transparent;
+            this.lbPRC.BorderColor = System.Drawing.Color.Black;
+            this.lbPRC.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
+            this.lbPRC.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.lbPRC.BorderWidth = 1F;
+            this.lbPRC.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.lbPRC.ForeColor = System.Drawing.Color.Black;
+            this.lbPRC.LocationFloat = new DevExpress.Utils.PointFloat(400.4298F, 0F);
+            this.lbPRC.Name = "lbPRC";
+            this.lbPRC.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbPRC.SizeF = new System.Drawing.SizeF(88.52344F, 25F);
+            this.lbPRC.StylePriority.UseBackColor = false;
+            this.lbPRC.StylePriority.UseBorderColor = false;
+            this.lbPRC.StylePriority.UseBorderDashStyle = false;
+            this.lbPRC.StylePriority.UseBorders = false;
+            this.lbPRC.StylePriority.UseBorderWidth = false;
+            this.lbPRC.StylePriority.UseFont = false;
+            this.lbPRC.StylePriority.UseForeColor = false;
+            this.lbPRC.StylePriority.UsePadding = false;
+            this.lbPRC.StylePriority.UseTextAlignment = false;
+            this.lbPRC.Text = "xrTableCell10";
+            this.lbPRC.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // xrLabel3
+            // 
+            this.xrLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.xrLabel3.BorderColor = System.Drawing.Color.Black;
+            this.xrLabel3.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
+            this.xrLabel3.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrLabel3.BorderWidth = 1F;
+            this.xrLabel3.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.xrLabel3.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 0F);
+            this.xrLabel3.Name = "xrLabel3";
+            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(50.63546F, 25F);
+            this.xrLabel3.StylePriority.UseBackColor = false;
+            this.xrLabel3.StylePriority.UseBorderColor = false;
+            this.xrLabel3.StylePriority.UseBorderDashStyle = false;
+            this.xrLabel3.StylePriority.UseBorders = false;
+            this.xrLabel3.StylePriority.UseBorderWidth = false;
+            this.xrLabel3.StylePriority.UseFont = false;
+            this.xrLabel3.StylePriority.UseForeColor = false;
+            this.xrLabel3.StylePriority.UsePadding = false;
+            this.xrLabel3.StylePriority.UseTextAlignment = false;
+            xrSummary1.Func = DevExpress.XtraReports.UI.SummaryFunc.RecordNumber;
+            xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
+            this.xrLabel3.Summary = xrSummary1;
+            this.xrLabel3.Text = "xrTableCell8";
+            this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // lbPNM
+            // 
+            this.lbPNM.BackColor = System.Drawing.Color.Transparent;
+            this.lbPNM.BorderColor = System.Drawing.Color.Black;
+            this.lbPNM.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
+            this.lbPNM.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.lbPNM.BorderWidth = 1F;
+            this.lbPNM.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.lbPNM.ForeColor = System.Drawing.Color.Black;
+            this.lbPNM.LocationFloat = new DevExpress.Utils.PointFloat(70.63548F, 0F);
+            this.lbPNM.Name = "lbPNM";
+            this.lbPNM.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbPNM.SizeF = new System.Drawing.SizeF(264.2709F, 25F);
+            this.lbPNM.StylePriority.UseBackColor = false;
+            this.lbPNM.StylePriority.UseBorderColor = false;
+            this.lbPNM.StylePriority.UseBorderDashStyle = false;
+            this.lbPNM.StylePriority.UseBorders = false;
+            this.lbPNM.StylePriority.UseBorderWidth = false;
+            this.lbPNM.StylePriority.UseFont = false;
+            this.lbPNM.StylePriority.UseForeColor = false;
+            this.lbPNM.StylePriority.UsePadding = false;
+            this.lbPNM.StylePriority.UseTextAlignment = false;
+            this.lbPNM.Text = "xrTableCell9";
+            this.lbPNM.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // lbQTY
+            // 
+            this.lbQTY.BackColor = System.Drawing.Color.Transparent;
+            this.lbQTY.BorderColor = System.Drawing.Color.Black;
+            this.lbQTY.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
+            this.lbQTY.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.lbQTY.BorderWidth = 1F;
+            this.lbQTY.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.lbQTY.ForeColor = System.Drawing.Color.Black;
+            this.lbQTY.LocationFloat = new DevExpress.Utils.PointFloat(334.9064F, 0F);
+            this.lbQTY.Name = "lbQTY";
+            this.lbQTY.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbQTY.SizeF = new System.Drawing.SizeF(58.52341F, 25F);
+            this.lbQTY.StylePriority.UseBackColor = false;
+            this.lbQTY.StylePriority.UseBorderColor = false;
+            this.lbQTY.StylePriority.UseBorderDashStyle = false;
+            this.lbQTY.StylePriority.UseBorders = false;
+            this.lbQTY.StylePriority.UseBorderWidth = false;
+            this.lbQTY.StylePriority.UseFont = false;
+            this.lbQTY.StylePriority.UseForeColor = false;
+            this.lbQTY.StylePriority.UsePadding = false;
+            this.lbQTY.StylePriority.UseTextAlignment = false;
+            this.lbQTY.Text = "xrTableCell10";
+            this.lbQTY.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // TopMargin
             // 
@@ -157,7 +335,7 @@
             this.xrLabel5.SizeF = new System.Drawing.SizeF(586.9999F, 24.99999F);
             this.xrLabel5.StylePriority.UseFont = false;
             this.xrLabel5.StylePriority.UseTextAlignment = false;
-            this.xrLabel5.Text = "Phone - 9862310857";
+            this.xrLabel5.Text = "Phone : 0389-2342228";
             this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel1
@@ -247,6 +425,12 @@
             this.xrTableCell6.Text = "Description";
             this.xrTableCell6.Weight = 1.1742606588000202D;
             // 
+            // xrTableCell1
+            // 
+            this.xrTableCell1.Name = "xrTableCell1";
+            this.xrTableCell1.Text = "Quantity";
+            this.xrTableCell1.Weight = 0.28053125982708149D;
+            // 
             // xrTableCell2
             // 
             this.xrTableCell2.Name = "xrTableCell2";
@@ -264,12 +448,6 @@
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.Text = "Balance";
             this.xrTableCell3.Weight = 0.40897286220771012D;
-            // 
-            // xrTableCell1
-            // 
-            this.xrTableCell1.Name = "xrTableCell1";
-            this.xrTableCell1.Text = "Quantity";
-            this.xrTableCell1.Weight = 0.28053125982708149D;
             // 
             // GroupHeader1
             // 
@@ -316,184 +494,6 @@
             this.lbSDT.Text = "lbSDT";
             this.lbSDT.Weight = 6.1724712496710588D;
             // 
-            // xrLabel3
-            // 
-            this.xrLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.xrLabel3.BorderColor = System.Drawing.Color.Black;
-            this.xrLabel3.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
-            this.xrLabel3.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrLabel3.BorderWidth = 1F;
-            this.xrLabel3.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.xrLabel3.ForeColor = System.Drawing.Color.Black;
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 0F);
-            this.xrLabel3.Name = "xrLabel3";
-            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel3.SizeF = new System.Drawing.SizeF(50.63546F, 25F);
-            this.xrLabel3.StylePriority.UseBackColor = false;
-            this.xrLabel3.StylePriority.UseBorderColor = false;
-            this.xrLabel3.StylePriority.UseBorderDashStyle = false;
-            this.xrLabel3.StylePriority.UseBorders = false;
-            this.xrLabel3.StylePriority.UseBorderWidth = false;
-            this.xrLabel3.StylePriority.UseFont = false;
-            this.xrLabel3.StylePriority.UseForeColor = false;
-            this.xrLabel3.StylePriority.UsePadding = false;
-            this.xrLabel3.StylePriority.UseTextAlignment = false;
-            xrSummary1.Func = DevExpress.XtraReports.UI.SummaryFunc.RecordNumber;
-            xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
-            this.xrLabel3.Summary = xrSummary1;
-            this.xrLabel3.Text = "xrTableCell8";
-            this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // lbPNM
-            // 
-            this.lbPNM.BackColor = System.Drawing.Color.Transparent;
-            this.lbPNM.BorderColor = System.Drawing.Color.Black;
-            this.lbPNM.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
-            this.lbPNM.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.lbPNM.BorderWidth = 1F;
-            this.lbPNM.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.lbPNM.ForeColor = System.Drawing.Color.Black;
-            this.lbPNM.LocationFloat = new DevExpress.Utils.PointFloat(70.63548F, 0F);
-            this.lbPNM.Name = "lbPNM";
-            this.lbPNM.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lbPNM.SizeF = new System.Drawing.SizeF(264.2709F, 25F);
-            this.lbPNM.StylePriority.UseBackColor = false;
-            this.lbPNM.StylePriority.UseBorderColor = false;
-            this.lbPNM.StylePriority.UseBorderDashStyle = false;
-            this.lbPNM.StylePriority.UseBorders = false;
-            this.lbPNM.StylePriority.UseBorderWidth = false;
-            this.lbPNM.StylePriority.UseFont = false;
-            this.lbPNM.StylePriority.UseForeColor = false;
-            this.lbPNM.StylePriority.UsePadding = false;
-            this.lbPNM.StylePriority.UseTextAlignment = false;
-            this.lbPNM.Text = "xrTableCell9";
-            this.lbPNM.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // lbQTY
-            // 
-            this.lbQTY.BackColor = System.Drawing.Color.Transparent;
-            this.lbQTY.BorderColor = System.Drawing.Color.Black;
-            this.lbQTY.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
-            this.lbQTY.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.lbQTY.BorderWidth = 1F;
-            this.lbQTY.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.lbQTY.ForeColor = System.Drawing.Color.Black;
-            this.lbQTY.LocationFloat = new DevExpress.Utils.PointFloat(334.9064F, 0F);
-            this.lbQTY.Name = "lbQTY";
-            this.lbQTY.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lbQTY.SizeF = new System.Drawing.SizeF(58.52341F, 25F);
-            this.lbQTY.StylePriority.UseBackColor = false;
-            this.lbQTY.StylePriority.UseBorderColor = false;
-            this.lbQTY.StylePriority.UseBorderDashStyle = false;
-            this.lbQTY.StylePriority.UseBorders = false;
-            this.lbQTY.StylePriority.UseBorderWidth = false;
-            this.lbQTY.StylePriority.UseFont = false;
-            this.lbQTY.StylePriority.UseForeColor = false;
-            this.lbQTY.StylePriority.UsePadding = false;
-            this.lbQTY.StylePriority.UseTextAlignment = false;
-            this.lbQTY.Text = "xrTableCell10";
-            this.lbQTY.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
-            // lbPRC
-            // 
-            this.lbPRC.BackColor = System.Drawing.Color.Transparent;
-            this.lbPRC.BorderColor = System.Drawing.Color.Black;
-            this.lbPRC.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
-            this.lbPRC.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.lbPRC.BorderWidth = 1F;
-            this.lbPRC.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.lbPRC.ForeColor = System.Drawing.Color.Black;
-            this.lbPRC.LocationFloat = new DevExpress.Utils.PointFloat(400.4298F, 0F);
-            this.lbPRC.Name = "lbPRC";
-            this.lbPRC.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lbPRC.SizeF = new System.Drawing.SizeF(88.52344F, 25F);
-            this.lbPRC.StylePriority.UseBackColor = false;
-            this.lbPRC.StylePriority.UseBorderColor = false;
-            this.lbPRC.StylePriority.UseBorderDashStyle = false;
-            this.lbPRC.StylePriority.UseBorders = false;
-            this.lbPRC.StylePriority.UseBorderWidth = false;
-            this.lbPRC.StylePriority.UseFont = false;
-            this.lbPRC.StylePriority.UseForeColor = false;
-            this.lbPRC.StylePriority.UsePadding = false;
-            this.lbPRC.StylePriority.UseTextAlignment = false;
-            this.lbPRC.Text = "xrTableCell10";
-            this.lbPRC.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
-            // lbPAM
-            // 
-            this.lbPAM.BackColor = System.Drawing.Color.Transparent;
-            this.lbPAM.BorderColor = System.Drawing.Color.Black;
-            this.lbPAM.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
-            this.lbPAM.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.lbPAM.BorderWidth = 1F;
-            this.lbPAM.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.lbPAM.ForeColor = System.Drawing.Color.Black;
-            this.lbPAM.LocationFloat = new DevExpress.Utils.PointFloat(495.9532F, 0F);
-            this.lbPAM.Name = "lbPAM";
-            this.lbPAM.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lbPAM.SizeF = new System.Drawing.SizeF(88.52344F, 25F);
-            this.lbPAM.StylePriority.UseBackColor = false;
-            this.lbPAM.StylePriority.UseBorderColor = false;
-            this.lbPAM.StylePriority.UseBorderDashStyle = false;
-            this.lbPAM.StylePriority.UseBorders = false;
-            this.lbPAM.StylePriority.UseBorderWidth = false;
-            this.lbPAM.StylePriority.UseFont = false;
-            this.lbPAM.StylePriority.UseForeColor = false;
-            this.lbPAM.StylePriority.UsePadding = false;
-            this.lbPAM.StylePriority.UseTextAlignment = false;
-            this.lbPAM.Text = "xrTableCell10";
-            this.lbPAM.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
-            // lbBAL
-            // 
-            this.lbBAL.BackColor = System.Drawing.Color.Transparent;
-            this.lbBAL.BorderColor = System.Drawing.Color.Black;
-            this.lbBAL.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
-            this.lbBAL.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.lbBAL.BorderWidth = 1F;
-            this.lbBAL.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.lbBAL.ForeColor = System.Drawing.Color.Black;
-            this.lbBAL.LocationFloat = new DevExpress.Utils.PointFloat(591.4766F, 0F);
-            this.lbBAL.Name = "lbBAL";
-            this.lbBAL.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lbBAL.SizeF = new System.Drawing.SizeF(88.52344F, 25F);
-            this.lbBAL.StylePriority.UseBackColor = false;
-            this.lbBAL.StylePriority.UseBorderColor = false;
-            this.lbBAL.StylePriority.UseBorderDashStyle = false;
-            this.lbBAL.StylePriority.UseBorders = false;
-            this.lbBAL.StylePriority.UseBorderWidth = false;
-            this.lbBAL.StylePriority.UseFont = false;
-            this.lbBAL.StylePriority.UseForeColor = false;
-            this.lbBAL.StylePriority.UsePadding = false;
-            this.lbBAL.StylePriority.UseTextAlignment = false;
-            this.lbBAL.Text = "xrTableCell10";
-            this.lbBAL.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
-            // lbBCD
-            // 
-            this.lbBCD.BackColor = System.Drawing.Color.Transparent;
-            this.lbBCD.BorderColor = System.Drawing.Color.Black;
-            this.lbBCD.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
-            this.lbBCD.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.lbBCD.BorderWidth = 1F;
-            this.lbBCD.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.lbBCD.ForeColor = System.Drawing.Color.Black;
-            this.lbBCD.LocationFloat = new DevExpress.Utils.PointFloat(70.63544F, 25F);
-            this.lbBCD.Name = "lbBCD";
-            this.lbBCD.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lbBCD.SizeF = new System.Drawing.SizeF(264.2709F, 18F);
-            this.lbBCD.StylePriority.UseBackColor = false;
-            this.lbBCD.StylePriority.UseBorderColor = false;
-            this.lbBCD.StylePriority.UseBorderDashStyle = false;
-            this.lbBCD.StylePriority.UseBorders = false;
-            this.lbBCD.StylePriority.UseBorderWidth = false;
-            this.lbBCD.StylePriority.UseFont = false;
-            this.lbBCD.StylePriority.UseForeColor = false;
-            this.lbBCD.StylePriority.UsePadding = false;
-            this.lbBCD.StylePriority.UseTextAlignment = false;
-            this.lbBCD.Text = "xrTableCell9";
-            this.lbBCD.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
             // GroupFooter1
             // 
             this.GroupFooter1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -504,6 +504,12 @@
             this.lbSBL});
             this.GroupFooter1.HeightF = 27F;
             this.GroupFooter1.Name = "GroupFooter1";
+            // 
+            // xrLine2
+            // 
+            this.xrLine2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 25F);
+            this.xrLine2.Name = "xrLine2";
+            this.xrLine2.SizeF = new System.Drawing.SizeF(687F, 2F);
             // 
             // xrLabel12
             // 
@@ -604,12 +610,6 @@
             this.lbSBL.StylePriority.UseTextAlignment = false;
             this.lbSBL.Text = "Balance";
             this.lbSBL.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLine2
-            // 
-            this.xrLine2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 25F);
-            this.xrLine2.Name = "xrLine2";
-            this.xrLine2.SizeF = new System.Drawing.SizeF(687F, 2F);
             // 
             // ReportFooter
             // 

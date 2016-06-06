@@ -45,6 +45,7 @@
             this.xrTableCell10 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow6 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell18 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.lbBCD = new DevExpress.XtraReports.UI.XRTableCell();
             this.lbPID = new DevExpress.XtraReports.UI.XRTableCell();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
@@ -82,7 +83,6 @@
             this.xrTableCell12 = new DevExpress.XtraReports.UI.XRTableCell();
             this.lbGTT = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.lbBCD = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
@@ -218,6 +218,15 @@
             this.xrTableCell18.Name = "xrTableCell18";
             this.xrTableCell18.Weight = 0.490952536166725D;
             // 
+            // lbBCD
+            // 
+            this.lbBCD.Multiline = true;
+            this.lbBCD.Name = "lbBCD";
+            this.lbBCD.StylePriority.UseTextAlignment = false;
+            this.lbBCD.Text = "lbBCD";
+            this.lbBCD.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.lbBCD.Weight = 1.1780233375645302D;
+            // 
             // lbPID
             // 
             this.lbPID.Name = "lbPID";
@@ -287,7 +296,7 @@
             this.xrLabel5.SizeF = new System.Drawing.SizeF(577F, 24.99999F);
             this.xrLabel5.StylePriority.UseFont = false;
             this.xrLabel5.StylePriority.UseTextAlignment = false;
-            this.xrLabel5.Text = "Phone - 9862310857";
+            this.xrLabel5.Text = "Phone : 0389-2342228";
             this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel1
@@ -548,15 +557,6 @@
             this.xrTableCell15.Name = "xrTableCell15";
             this.xrTableCell15.StylePriority.UseBorders = false;
             this.xrTableCell15.Weight = 0.00762786528675917D;
-            // 
-            // lbBCD
-            // 
-            this.lbBCD.Multiline = true;
-            this.lbBCD.Name = "lbBCD";
-            this.lbBCD.StylePriority.UseTextAlignment = false;
-            this.lbBCD.Text = "lbBCD";
-            this.lbBCD.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.lbBCD.Weight = 1.1780233375645302D;
             // 
             // rptPurchasedProducts
             // 
