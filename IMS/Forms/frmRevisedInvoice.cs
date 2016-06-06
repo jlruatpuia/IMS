@@ -148,35 +148,72 @@ namespace IMS.Forms
             wrSales.Sale ss = new wrSales.Sale();
             wrSales.SaleDetail sd = new wrSales.SaleDetail();
 
-            sc = sls.DeleteSalesByInvoice(lueINV.EditValue.ToString());
+            ss.SaleDate = dtpSDT.DateTime;
+            ss.InvoiceNo = lueINV.EditValue.ToString();
+            ss.Amount = Convert.ToDouble(txtAMT.EditValue);
+            ss.Discount = Convert.ToDouble(txtDSC.EditValue);
+            ss.Payment = Convert.ToDouble(txtPAM.EditValue);
+            ss.Balance = Convert.ToDouble(txtBAL.EditValue);
 
-            if(sc.Message == null)
+            sc = sls.UpdateSales(ss);
+            if(sc.Message != null)
             {
-                ss.InvoiceNo = lueINV.EditValue.ToString();
-                ss.SaleDate = dtpSDT.DateTime;
-                ss.CustomerID = Convert.ToInt32(lueCUS.EditValue);
-                ss.Amount = Convert.ToDouble(txtAMT.EditValue);
-                ss.Discount = Convert.ToDouble(txtDSC.EditValue);
-                ss.Payment = Convert.ToDouble(txtPAM.EditValue);
-                ss.Balance = Convert.ToDouble(txtBAL.EditValue);
+                XtraMessageBox.Show(sc.Message);
+                return;
+            }
 
-                sc = sls.AddSale(ss);
-                if (sc.Message != null)
+            for(int i = 0; i <= grv.RowCount -1; i++)
+            {
+                sd.SaleDetailID = Convert.ToInt32(grv.GetRowCellValue(i, colSID));
+                sd.SellingValue = Convert.ToDouble(grv.GetRowCellValue(i, colSVL));
+                sd.Amount = Convert.ToDouble(grv.GetRowCellValue(i, colAMT));
+
+                sc = sls.UpdateSaleDetail(sd);
+                if(sc.Message != null)
                 {
                     XtraMessageBox.Show(sc.Message);
                     return;
                 }
-
-                for(int i  = 0; i <= grv.RowCount - 1; i++)
-                {
-                    sd.InvoiceNo = lueINV.EditValue.ToString(); ;
-                    sd.ProductID = Convert.ToInt32(grv.GetRowCellValue(i, colPID));
-                    sd.Quantity = Convert.ToInt32(grv.GetRowCellValue(i, colQTY));
-                    sd.BuyingValue = Convert.ToDouble(grv.GetRowCellValue(i, colBVL));
-                    sd.SellingValue = Convert.ToDouble(grv.GetRowCellValue(i, colSVL));
-                    sd.Amount = sd.Quantity * sd.SellingValue;
-                }
             }
+
+            XtraMessageBox.Show("Done!");
+            sc = sls.getSoldProductsByInvoiceNo(lueINV.EditValue.ToString());
+            XRSummary total = new XRSummary();
+
+            rptCashMemo rpc = new rptCashMemo() { DataSource = sc.dataTable };
+            rpc.lblCNM.DataBindings.Add("Text", null, "CustomerName");
+            rpc.lblADR.DataBindings.Add("Text", null, "Address");
+            rpc.lblPHN.DataBindings.Add("Text", null, "Phone");
+
+            rpc.lblINV.DataBindings.Add("Text", null, "InvoiceNo");
+            rpc.lblSDT.DataBindings.Add("Text", null, "SaleDate", "{0:dd-MM-yyyy}");
+
+            rpc.lblPNM.DataBindings.Add("Text", null, "ProductName");
+            rpc.lbSNO.DataBindings.Add("Text", null, "BarCode");
+            rpc.lblQTY.DataBindings.Add("Text", null, "Quantity");
+            rpc.lblPRC.DataBindings.Add("Text", null, "SellingValue", "{0:c}");
+            rpc.lblDSC.DataBindings.Add("Text", null, "Discount", "{0:C2}");
+            rpc.lblAMT.DataBindings.Add("Text", null, "Amount", "{0:c}");
+            rpc.lblTTL.DataBindings.Add("Text", null, "Amount", "{0:c}");
+
+            total.FormatString = "{0:C2}";
+            total.Running = SummaryRunning.Report;
+            rpc.lblTTL.Summary = total;
+            //rpt.lblTTL.Text = s.Amount.ToString("c2");
+            double dsc = 0;
+            int amt = 0;
+            for (int i = 0; i <= sc.dataTable.Rows.Count - 1; i++)
+            {
+                dsc += Convert.ToDouble(sc.dataTable.Rows[i].ItemArray[10]);
+                amt += Convert.ToInt32(sc.dataTable.Rows[i].ItemArray[9]);
+            }
+            if (dsc <= 0)
+            {
+                rpc.xrLabel8.Visible = false;
+                rpc.lblDSC.Visible = false;
+            }
+            rpc.lblAMW.Text = "Rupees " + Utils.NumbersToWords(Convert.ToInt32(amt)) + " only";
+            rpc.ShowPreviewDialog();
         }
     }
 }

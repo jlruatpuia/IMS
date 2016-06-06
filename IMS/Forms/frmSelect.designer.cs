@@ -100,14 +100,14 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(750, 63, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(464, 140);
+            this.layoutControl1.Size = new System.Drawing.Size(460, 144);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(374, 99);
+            this.btnCancel.Location = new System.Drawing.Point(370, 99);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(78, 29);
             this.btnCancel.StyleController = this.layoutControl1;
@@ -117,7 +117,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(275, 99);
+            this.btnOK.Location = new System.Drawing.Point(271, 99);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(78, 29);
             this.btnOK.StyleController = this.layoutControl1;
@@ -127,9 +127,9 @@
             // 
             // txtInv
             // 
-            this.txtInv.Location = new System.Drawing.Point(109, 70);
+            this.txtInv.Location = new System.Drawing.Point(108, 70);
             this.txtInv.Name = "txtInv";
-            this.txtInv.Size = new System.Drawing.Size(343, 20);
+            this.txtInv.Size = new System.Drawing.Size(340, 20);
             this.txtInv.StyleController = this.layoutControl1;
             this.txtInv.TabIndex = 10;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -139,13 +139,13 @@
             // dtpDtTo
             // 
             this.dtpDtTo.EditValue = null;
-            this.dtpDtTo.Location = new System.Drawing.Point(297, 41);
+            this.dtpDtTo.Location = new System.Drawing.Point(295, 41);
             this.dtpDtTo.Name = "dtpDtTo";
             this.dtpDtTo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpDtTo.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpDtTo.Size = new System.Drawing.Size(155, 20);
+            this.dtpDtTo.Size = new System.Drawing.Size(153, 20);
             this.dtpDtTo.StyleController = this.layoutControl1;
             this.dtpDtTo.TabIndex = 9;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -155,13 +155,13 @@
             // dtpDtFr
             // 
             this.dtpDtFr.EditValue = null;
-            this.dtpDtFr.Location = new System.Drawing.Point(109, 41);
+            this.dtpDtFr.Location = new System.Drawing.Point(108, 41);
             this.dtpDtFr.Name = "dtpDtFr";
             this.dtpDtFr.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpDtFr.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpDtFr.Size = new System.Drawing.Size(158, 20);
+            this.dtpDtFr.Size = new System.Drawing.Size(157, 20);
             this.dtpDtFr.StyleController = this.layoutControl1;
             this.dtpDtFr.TabIndex = 8;
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -171,13 +171,13 @@
             // dtpDtOn
             // 
             this.dtpDtOn.EditValue = null;
-            this.dtpDtOn.Location = new System.Drawing.Point(109, 12);
+            this.dtpDtOn.Location = new System.Drawing.Point(108, 12);
             this.dtpDtOn.Name = "dtpDtOn";
             this.dtpDtOn.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpDtOn.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpDtOn.Size = new System.Drawing.Size(343, 20);
+            this.dtpDtOn.Size = new System.Drawing.Size(340, 20);
             this.dtpDtOn.StyleController = this.layoutControl1;
             this.dtpDtOn.TabIndex = 7;
             conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -188,7 +188,7 @@
             // 
             this.rdoInv.Location = new System.Drawing.Point(12, 70);
             this.rdoInv.Name = "rdoInv";
-            this.rdoInv.Size = new System.Drawing.Size(93, 25);
+            this.rdoInv.Size = new System.Drawing.Size(92, 25);
             this.rdoInv.TabIndex = 6;
             this.rdoInv.TabStop = true;
             this.rdoInv.Text = "Invoice No:";
@@ -199,7 +199,7 @@
             // 
             this.rdoDtBt.Location = new System.Drawing.Point(12, 41);
             this.rdoDtBt.Name = "rdoDtBt";
-            this.rdoDtBt.Size = new System.Drawing.Size(93, 25);
+            this.rdoDtBt.Size = new System.Drawing.Size(92, 25);
             this.rdoDtBt.TabIndex = 5;
             this.rdoDtBt.TabStop = true;
             this.rdoDtBt.Text = "Date Between:";
@@ -210,7 +210,7 @@
             // 
             this.rdoDtOn.Location = new System.Drawing.Point(12, 12);
             this.rdoDtOn.Name = "rdoDtOn";
-            this.rdoDtOn.Size = new System.Drawing.Size(93, 25);
+            this.rdoDtOn.Size = new System.Drawing.Size(92, 25);
             this.rdoDtOn.TabIndex = 4;
             this.rdoDtOn.TabStop = true;
             this.rdoDtOn.Text = "Date On:";
@@ -235,7 +235,7 @@
             this.emptySpaceItem2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(464, 140);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(460, 144);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -243,7 +243,7 @@
             this.layoutControlItem1.Control = this.rdoDtOn;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(97, 29);
+            this.layoutControlItem1.Size = new System.Drawing.Size(96, 29);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -252,7 +252,7 @@
             this.layoutControlItem2.Control = this.rdoDtBt;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 29);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(97, 29);
+            this.layoutControlItem2.Size = new System.Drawing.Size(96, 29);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -261,54 +261,54 @@
             this.layoutControlItem3.Control = this.rdoInv;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 58);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(97, 29);
+            this.layoutControlItem3.Size = new System.Drawing.Size(96, 29);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.dtpDtOn;
-            this.layoutControlItem4.Location = new System.Drawing.Point(97, 0);
+            this.layoutControlItem4.Location = new System.Drawing.Point(96, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(347, 29);
+            this.layoutControlItem4.Size = new System.Drawing.Size(344, 29);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.dtpDtFr;
-            this.layoutControlItem5.Location = new System.Drawing.Point(97, 29);
+            this.layoutControlItem5.Location = new System.Drawing.Point(96, 29);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(162, 29);
+            this.layoutControlItem5.Size = new System.Drawing.Size(161, 29);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.dtpDtTo;
-            this.layoutControlItem6.Location = new System.Drawing.Point(259, 29);
+            this.layoutControlItem6.Location = new System.Drawing.Point(257, 29);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(185, 29);
+            this.layoutControlItem6.Size = new System.Drawing.Size(183, 29);
             this.layoutControlItem6.Text = "And:";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(23, 13);
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.txtInv;
-            this.layoutControlItem7.Location = new System.Drawing.Point(97, 58);
+            this.layoutControlItem7.Location = new System.Drawing.Point(96, 58);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(347, 29);
+            this.layoutControlItem7.Size = new System.Drawing.Size(344, 29);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.btnOK;
-            this.layoutControlItem8.Location = new System.Drawing.Point(263, 87);
+            this.layoutControlItem8.Location = new System.Drawing.Point(259, 87);
             this.layoutControlItem8.MaxSize = new System.Drawing.Size(82, 33);
             this.layoutControlItem8.MinSize = new System.Drawing.Size(82, 33);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(82, 33);
+            this.layoutControlItem8.Size = new System.Drawing.Size(82, 37);
             this.layoutControlItem8.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
@@ -316,11 +316,11 @@
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.btnCancel;
-            this.layoutControlItem9.Location = new System.Drawing.Point(362, 87);
+            this.layoutControlItem9.Location = new System.Drawing.Point(358, 87);
             this.layoutControlItem9.MaxSize = new System.Drawing.Size(82, 33);
             this.layoutControlItem9.MinSize = new System.Drawing.Size(82, 33);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(82, 33);
+            this.layoutControlItem9.Size = new System.Drawing.Size(82, 37);
             this.layoutControlItem9.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
@@ -328,9 +328,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(345, 87);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(341, 87);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(17, 33);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(17, 37);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem2
@@ -338,7 +338,7 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 87);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(263, 33);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(259, 37);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // frmSelect
@@ -347,7 +347,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(464, 140);
+            this.ClientSize = new System.Drawing.Size(460, 144);
             this.ControlBox = false;
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

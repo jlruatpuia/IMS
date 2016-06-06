@@ -23,8 +23,8 @@ namespace IMS.Controls
         {
             InitializeComponent();
 
-            if (dv.Document == null)
-                rpPreview.Visible = false;
+            //if (dv.Document == null)
+            //    rpPreview.Visible = false;
             chkALL.Checked = true;
             checkEdit1.Checked = true;
             wrCustomers.Server2Client csc = new wrCustomers.Server2Client();
@@ -106,76 +106,201 @@ namespace IMS.Controls
                 wrSales.wsSales s;
                 
                 rptSoldProducts rpt = new rptSoldProducts();
+                wrSettings.wrSettings stg = new wrSettings.wrSettings();
+                double SVC = 0;
 
                 if (frm.RetVal == 0)
                 {
                     sc = new wrSales.Server2Client();
                     s = new wrSales.wsSales();
                     sc = s.getSoldProductsByDate(frm.DateOn);
-                    rpt.DataSource = sc.dataTable;
+                    SVC = stg.GetServicingByDate(frm.DateOn);
+                    rptProductSold r = new rptProductSold() { DataSource = sc.dataTable };
+                    //rpt.DataSource = sc.dataTable;
+                    //SELECT Sale.InvoiceNo, Product.ProductName, GROUP_CONCAT(Product.BarCode) BarCode, SaleDetail.SellingValue, Sum(SaleDetail.Quantity) AS SumOfQuantity, Sale.Amount, Sale.Discount, Sale.Payment, Sale.Balance
+                    r.lbTTL.Text = "Products sold On " + frm.DateOn.ToShortDateString();
+                    XRSummary tam = new XRSummary();
+                    XRSummary tdc = new XRSummary();
+                    XRSummary tpm = new XRSummary();
+                    XRSummary tbl = new XRSummary();
+                    XRSummary gam = new XRSummary();
+                    XRSummary gdc = new XRSummary();
+                    XRSummary gpm = new XRSummary();
+                    XRSummary gbl = new XRSummary();
 
-                    rpt.lbTTL.Text = "Products sold On " + frm.DateOn.ToShortDateString();
-                    XRSummary stt = new XRSummary();
-                    XRSummary gtt = new XRSummary();
+                    //GroupField grp = new GroupField("SaleDate");
+                    //GroupField cnm = new GroupField("CustomerName");
 
-                    GroupField grp = new GroupField("SaleDate");
-                    rpt.GroupHeader1.GroupFields.Add(grp);
+                    GroupField sdt = new GroupField("SaleDate");
+                    GroupField inv = new GroupField("InvoiceNo");
 
-                    rpt.lbSDT.DataBindings.Add("Text", null, "SaleDate", "{0:dd-MM-yyyy}");
-                    rpt.lbPNM.DataBindings.Add("Text", null, "ProductName");
-                    rpt.lbPID.DataBindings.Add("Text", null, "BarCode");
-                    rpt.lbSVL.DataBindings.Add("Text", null, "SellingValue", "{0:C2}");
-                    rpt.lbQTY.DataBindings.Add("Text", null, "Quantity");
-                    rpt.lbAMT.DataBindings.Add("Text", null, "Amount", "{0:C2}");
-                    rpt.lbSTT.DataBindings.Add("Text", null, "Amount", "{0:C2}");
-                    rpt.lbGTT.DataBindings.Add("Text", null, "Amount", "{0:C2}");
+                    //rpt.GroupHeader1.GroupFields.Add(grp);
+                    //rpt.GroupHeader2.GroupFields.Add(cnm);
 
-                    stt.FormatString = "{0:C2}";
-                    gtt.FormatString = "{0:C2}";
+                    r.grpSDT.GroupFields.Add(sdt);
+                    r.grpSDT.GroupFields.Add(inv);
+                    //r.sbnINV.Band.
 
-                    stt.Running = SummaryRunning.Group;
-                    gtt.Running = SummaryRunning.Report;
+                    r.lbINV.DataBindings.Add("Text", null, "InvoiceNo");
+                    r.lbSDT.DataBindings.Add("Text", null, "SaleDate", "{0:dd-MM-yyyy}");
+                    r.lbPNM.DataBindings.Add("Text", null, "ProductName");
+                    r.lbBCD.DataBindings.Add("Text", null, "BarCode");
+                    r.lbSVL.DataBindings.Add("Text", null, "SellingValue", "{0:C2}");
+                    r.lbQTY.DataBindings.Add("Text", null, "SumOfQuantity");
+                    r.lbAMT.DataBindings.Add("Text", null, "Amount", "{0:C2}");
+                    r.lbDSC.DataBindings.Add("Text", null, "Discount", "{0:C2}");
+                    r.lbPAM.DataBindings.Add("Text", null, "Payment", "{0:C2}");
+                    r.lbBAL.DataBindings.Add("Text", null, "Balance", "{0:C2}");
+                    r.lbTAM.DataBindings.Add("Text", null, "Amount", "{0:C2}");
+                    r.lbTDC.DataBindings.Add("Text", null, "Discount", "{0:C2}");
+                    r.lbTPM.DataBindings.Add("Text", null, "Payment", "{0:C2}");
+                    r.lbTBL.DataBindings.Add("Text", null, "Balance", "{0:C2}");
+                    r.lbGAM.DataBindings.Add("Text", null, "Amount", "{0:C2}");
+                    r.lbGDC.DataBindings.Add("Text", null, "Discount", "{0:C2}");
+                    r.lbGPM.DataBindings.Add("Text", null, "Payment", "{0:C2}");
+                    r.lbGBL.DataBindings.Add("Text", null, "Balance", "{0:C2}");
 
-                    rpt.lbSTT.Summary = stt;
-                    rpt.lbGTT.Summary = gtt;
+                    tam.FormatString = "{0:C2}";
+                    tdc.FormatString = "{0:C2}";
+                    tpm.FormatString = "{0:C2}";
+                    tbl.FormatString = "{0:C2}";
+                    gam.FormatString = "{0:C2}";
+                    gdc.FormatString = "{0:C2}";
+                    gpm.FormatString = "{0:C2}";
+                    gbl.FormatString = "{0:C2}";
 
-                    dv.PrintingSystem = rpt.PrintingSystem;
-                    rpt.CreateDocument(true);
+                    tam.Running = SummaryRunning.Group;
+                    tdc.Running = SummaryRunning.Group;
+                    tpm.Running = SummaryRunning.Group;
+                    tbl.Running = SummaryRunning.Group;
+                    gam.Running = SummaryRunning.Report;
+                    gdc.Running = SummaryRunning.Report;
+                    gpm.Running = SummaryRunning.Report;
+                    gbl.Running = SummaryRunning.Report;
+
+                    r.lbTAM.Summary = tam;
+                    r.lbTDC.Summary = tdc;
+                    r.lbTPM.Summary = tpm;
+                    r.lbTBL.Summary = tbl;
+                    r.lbGAM.Summary = gam;
+                    r.lbGDC.Summary = gdc;
+                    r.lbGPM.Summary = gpm;
+                    r.lbGBL.Summary = gbl;
+
+                    r.lbSVC.Text = SVC.ToString("C2");
+
+                    dv.PrintingSystem = r.PrintingSystem;
+                    r.CreateDocument(true);
                 }
                 else if(frm.RetVal == 1)
                 {
                     sc = new wrSales.Server2Client();
                     s = new wrSales.wsSales();
                     sc = s.getSoldProductsByDates(frm.DateFrom, frm.DateTo);
-                    rpt.DataSource = sc.dataTable;
+                    SVC = stg.GetServicingByDates(frm.DateFrom, frm.DateTo);
+                    //rpt.DataSource = sc.dataTable;
 
-                    rpt.lbTTL.Text = "Products sold Between " + frm.DateFrom.ToShortDateString() + " and " + frm.DateTo.ToShortDateString();
-                    XRSummary stt = new XRSummary();
-                    XRSummary gtt = new XRSummary();
+                    //rpt.lbTTL.Text = "Products sold Between " + frm.DateFrom.ToShortDateString() + " and " + frm.DateTo.ToShortDateString();
+                    //XRSummary stt = new XRSummary();
+                    //XRSummary gtt = new XRSummary();
 
-                    GroupField grp = new GroupField("SaleDate");
-                    rpt.GroupHeader1.GroupFields.Add(grp);
+                    //GroupField grp = new GroupField("SaleDate");
+                    //rpt.GroupHeader1.GroupFields.Add(grp);
 
-                    rpt.lbSDT.DataBindings.Add("Text", null, "SaleDate", "{0:dd-MM-yyyy}");
-                    rpt.lbPNM.DataBindings.Add("Text", null, "ProductName");
-                    rpt.lbPID.DataBindings.Add("Text", null, "BarCode");
-                    rpt.lbSVL.DataBindings.Add("Text", null, "SellingValue", "{0:C2}");
-                    rpt.lbQTY.DataBindings.Add("Text", null, "Quantity");
-                    rpt.lbAMT.DataBindings.Add("Text", null, "Amount", "{0:C2}");
-                    rpt.lbSTT.DataBindings.Add("Text", null, "Amount", "{0:C2}");
-                    rpt.lbGTT.DataBindings.Add("Text", null, "Amount", "{0:C2}");
+                    //rpt.lbSDT.DataBindings.Add("Text", null, "SaleDate", "{0:dd-MM-yyyy}");
+                    //rpt.lbPNM.DataBindings.Add("Text", null, "ProductName");
+                    //rpt.lbPID.DataBindings.Add("Text", null, "BarCode");
+                    //rpt.lbSVL.DataBindings.Add("Text", null, "SellingValue", "{0:C2}");
+                    //rpt.lbQTY.DataBindings.Add("Text", null, "Quantity");
+                    //rpt.lbAMT.DataBindings.Add("Text", null, "Amount", "{0:C2}");
+                    //rpt.lbSTT.DataBindings.Add("Text", null, "Amount", "{0:C2}");
+                    //rpt.lbGTT.DataBindings.Add("Text", null, "Amount", "{0:C2}");
 
-                    stt.FormatString = "{0:C2}";
-                    gtt.FormatString = "{0:C2}";
+                    //stt.FormatString = "{0:C2}";
+                    //gtt.FormatString = "{0:C2}";
 
-                    stt.Running = SummaryRunning.Group;
-                    gtt.Running = SummaryRunning.Report;
+                    //stt.Running = SummaryRunning.Group;
+                    //gtt.Running = SummaryRunning.Report;
 
-                    rpt.lbSTT.Summary = stt;
-                    rpt.lbGTT.Summary = gtt;
+                    //rpt.lbSTT.Summary = stt;
+                    //rpt.lbGTT.Summary = gtt;
 
-                    dv.PrintingSystem = rpt.PrintingSystem;
-                    rpt.CreateDocument(true);
+                    //dv.PrintingSystem = rpt.PrintingSystem;
+                    //rpt.CreateDocument(true);
+                    rptProductSold r = new rptProductSold() { DataSource = sc.dataTable };
+                    //rpt.DataSource = sc.dataTable;
+                    //SELECT Sale.InvoiceNo, Product.ProductName, GROUP_CONCAT(Product.BarCode) BarCode, SaleDetail.SellingValue, Sum(SaleDetail.Quantity) AS SumOfQuantity, Sale.Amount, Sale.Discount, Sale.Payment, Sale.Balance
+                    r.lbTTL.Text = "Products sold On " + frm.DateOn.ToShortDateString();
+                    XRSummary tam = new XRSummary();
+                    XRSummary tdc = new XRSummary();
+                    XRSummary tpm = new XRSummary();
+                    XRSummary tbl = new XRSummary();
+                    XRSummary gam = new XRSummary();
+                    XRSummary gdc = new XRSummary();
+                    XRSummary gpm = new XRSummary();
+                    XRSummary gbl = new XRSummary();
+
+                    //GroupField grp = new GroupField("SaleDate");
+                    //GroupField cnm = new GroupField("CustomerName");
+
+                    GroupField sdt = new GroupField("SaleDate");
+                    GroupField inv = new GroupField("InvoiceNo");
+
+                    //rpt.GroupHeader1.GroupFields.Add(grp);
+                    //rpt.GroupHeader2.GroupFields.Add(cnm);
+
+                    r.grpSDT.GroupFields.Add(sdt);
+                    r.grpSDT.GroupFields.Add(inv);
+                    //r.sbnINV.Band.
+
+                    r.lbINV.DataBindings.Add("Text", null, "InvoiceNo");
+                    r.lbSDT.DataBindings.Add("Text", null, "SaleDate", "{0:dd-MM-yyyy}");
+                    r.lbPNM.DataBindings.Add("Text", null, "ProductName");
+                    r.lbBCD.DataBindings.Add("Text", null, "BarCode");
+                    r.lbSVL.DataBindings.Add("Text", null, "SellingValue", "{0:C2}");
+                    r.lbQTY.DataBindings.Add("Text", null, "SumOfQuantity");
+                    r.lbAMT.DataBindings.Add("Text", null, "Amount", "{0:C2}");
+                    r.lbDSC.DataBindings.Add("Text", null, "Discount", "{0:C2}");
+                    r.lbPAM.DataBindings.Add("Text", null, "Payment", "{0:C2}");
+                    r.lbBAL.DataBindings.Add("Text", null, "Balance", "{0:C2}");
+                    r.lbTAM.DataBindings.Add("Text", null, "Amount", "{0:C2}");
+                    r.lbTDC.DataBindings.Add("Text", null, "Discount", "{0:C2}");
+                    r.lbTPM.DataBindings.Add("Text", null, "Payment", "{0:C2}");
+                    r.lbTBL.DataBindings.Add("Text", null, "Balance", "{0:C2}");
+                    r.lbGAM.DataBindings.Add("Text", null, "Amount", "{0:C2}");
+                    r.lbGDC.DataBindings.Add("Text", null, "Discount", "{0:C2}");
+                    r.lbGPM.DataBindings.Add("Text", null, "Payment", "{0:C2}");
+                    r.lbGBL.DataBindings.Add("Text", null, "Balance", "{0:C2}");
+
+                    tam.FormatString = "{0:C2}";
+                    tdc.FormatString = "{0:C2}";
+                    tpm.FormatString = "{0:C2}";
+                    tbl.FormatString = "{0:C2}";
+                    gam.FormatString = "{0:C2}";
+                    gdc.FormatString = "{0:C2}";
+                    gpm.FormatString = "{0:C2}";
+                    gbl.FormatString = "{0:C2}";
+
+                    tam.Running = SummaryRunning.Group;
+                    tdc.Running = SummaryRunning.Group;
+                    tpm.Running = SummaryRunning.Group;
+                    tbl.Running = SummaryRunning.Group;
+                    gam.Running = SummaryRunning.Report;
+                    gdc.Running = SummaryRunning.Report;
+                    gpm.Running = SummaryRunning.Report;
+                    gbl.Running = SummaryRunning.Report;
+
+                    r.lbTAM.Summary = tam;
+                    r.lbTDC.Summary = tdc;
+                    r.lbTPM.Summary = tpm;
+                    r.lbTBL.Summary = tbl;
+                    r.lbGAM.Summary = gam;
+                    r.lbGDC.Summary = gdc;
+                    r.lbGPM.Summary = gpm;
+                    r.lbGBL.Summary = gbl;
+                    r.lbSVC.Text = SVC.ToString("C2");
+                    dv.PrintingSystem = r.PrintingSystem;
+                    r.CreateDocument(true);
                 }
                 else
                 {
@@ -458,8 +583,8 @@ namespace IMS.Controls
             ribbonStatusBar1.Dispose();
             if(dv.Document != null)
             {
-                rpPreview.Visible = true;
-                ribbonControl1.SelectedPage = rpPreview;
+                //rpPreview.Visible = true;
+                //ribbonControl1.SelectedPage = rpPreview;
             }
         }
 

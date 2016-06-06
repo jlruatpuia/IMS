@@ -48,6 +48,7 @@
             this.repSVL = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.colAMT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repAMT = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.colBVL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lueCUS = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCusID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -70,7 +71,6 @@
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.colBVL = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueINV.Properties)).BeginInit();
@@ -269,6 +269,9 @@
             this.colPID.ColumnEdit = this.repPNM;
             this.colPID.FieldName = "ProductID";
             this.colPID.Name = "colPID";
+            this.colPID.OptionsColumn.AllowEdit = false;
+            this.colPID.OptionsColumn.AllowFocus = false;
+            this.colPID.OptionsColumn.ReadOnly = true;
             this.colPID.Visible = true;
             this.colPID.VisibleIndex = 0;
             this.colPID.Width = 350;
@@ -296,6 +299,9 @@
             this.colQTY.ColumnEdit = this.repQTY;
             this.colQTY.FieldName = "Quantity";
             this.colQTY.Name = "colQTY";
+            this.colQTY.OptionsColumn.AllowEdit = false;
+            this.colQTY.OptionsColumn.AllowFocus = false;
+            this.colQTY.OptionsColumn.ReadOnly = true;
             this.colQTY.Visible = true;
             this.colQTY.VisibleIndex = 1;
             this.colQTY.Width = 53;
@@ -330,6 +336,9 @@
             this.colAMT.ColumnEdit = this.repAMT;
             this.colAMT.FieldName = "Amount";
             this.colAMT.Name = "colAMT";
+            this.colAMT.OptionsColumn.AllowEdit = false;
+            this.colAMT.OptionsColumn.AllowFocus = false;
+            this.colAMT.OptionsColumn.ReadOnly = true;
             this.colAMT.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", "{0:0.##}")});
             this.colAMT.Visible = true;
@@ -342,6 +351,12 @@
             this.repAMT.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repAMT.Name = "repAMT";
+            // 
+            // colBVL
+            // 
+            this.colBVL.Caption = "gridColumn1";
+            this.colBVL.FieldName = "BuyingValue";
+            this.colBVL.Name = "colBVL";
             // 
             // lueCUS
             // 
@@ -566,12 +581,6 @@
             this.emptySpaceItem3.Name = "emptySpaceItem3";
             this.emptySpaceItem3.Size = new System.Drawing.Size(10, 36);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // colBVL
-            // 
-            this.colBVL.Caption = "gridColumn1";
-            this.colBVL.FieldName = "BuyingValue";
-            this.colBVL.Name = "colBVL";
             // 
             // frmRevisedInvoice
             // 

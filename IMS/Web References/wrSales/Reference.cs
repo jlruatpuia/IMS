@@ -24,7 +24,7 @@ namespace IMS.wrSales {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="wsSalesSoap", Namespace="http://tempuri.org/")]
@@ -55,6 +55,10 @@ namespace IMS.wrSales {
         private System.Threading.SendOrPostCallback SalesToCustomerByIDOperationCompleted;
         
         private System.Threading.SendOrPostCallback SalesToCustomerByDatesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback UpdateSalesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback UpdateSaleDetailOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -132,6 +136,12 @@ namespace IMS.wrSales {
         
         /// <remarks/>
         public event SalesToCustomerByDatesCompletedEventHandler SalesToCustomerByDatesCompleted;
+        
+        /// <remarks/>
+        public event UpdateSalesCompletedEventHandler UpdateSalesCompleted;
+        
+        /// <remarks/>
+        public event UpdateSaleDetailCompletedEventHandler UpdateSaleDetailCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AddSale", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -517,6 +527,64 @@ namespace IMS.wrSales {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/UpdateSales", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Server2Client UpdateSales(Sale s) {
+            object[] results = this.Invoke("UpdateSales", new object[] {
+                        s});
+            return ((Server2Client)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void UpdateSalesAsync(Sale s) {
+            this.UpdateSalesAsync(s, null);
+        }
+        
+        /// <remarks/>
+        public void UpdateSalesAsync(Sale s, object userState) {
+            if ((this.UpdateSalesOperationCompleted == null)) {
+                this.UpdateSalesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateSalesOperationCompleted);
+            }
+            this.InvokeAsync("UpdateSales", new object[] {
+                        s}, this.UpdateSalesOperationCompleted, userState);
+        }
+        
+        private void OnUpdateSalesOperationCompleted(object arg) {
+            if ((this.UpdateSalesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.UpdateSalesCompleted(this, new UpdateSalesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/UpdateSaleDetail", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Server2Client UpdateSaleDetail(SaleDetail sd) {
+            object[] results = this.Invoke("UpdateSaleDetail", new object[] {
+                        sd});
+            return ((Server2Client)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void UpdateSaleDetailAsync(SaleDetail sd) {
+            this.UpdateSaleDetailAsync(sd, null);
+        }
+        
+        /// <remarks/>
+        public void UpdateSaleDetailAsync(SaleDetail sd, object userState) {
+            if ((this.UpdateSaleDetailOperationCompleted == null)) {
+                this.UpdateSaleDetailOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateSaleDetailOperationCompleted);
+            }
+            this.InvokeAsync("UpdateSaleDetail", new object[] {
+                        sd}, this.UpdateSaleDetailOperationCompleted, userState);
+        }
+        
+        private void OnUpdateSaleDetailOperationCompleted(object arg) {
+            if ((this.UpdateSaleDetailCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.UpdateSaleDetailCompleted(this, new UpdateSaleDetailCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -884,11 +952,11 @@ namespace IMS.wrSales {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void AddSaleCompletedEventHandler(object sender, AddSaleCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class AddSaleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -910,11 +978,11 @@ namespace IMS.wrSales {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void AddSaleDetailsCompletedEventHandler(object sender, AddSaleDetailsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class AddSaleDetailsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -936,11 +1004,11 @@ namespace IMS.wrSales {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void GetSalesCompletedEventHandler(object sender, GetSalesCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetSalesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -962,11 +1030,11 @@ namespace IMS.wrSales {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void getSalesByInvoiceCompletedEventHandler(object sender, getSalesByInvoiceCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getSalesByInvoiceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -988,11 +1056,11 @@ namespace IMS.wrSales {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void DeleteSalesByInvoiceCompletedEventHandler(object sender, DeleteSalesByInvoiceCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class DeleteSalesByInvoiceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1014,11 +1082,11 @@ namespace IMS.wrSales {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void GetCustomerByInvoiceCompletedEventHandler(object sender, GetCustomerByInvoiceCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetCustomerByInvoiceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1040,11 +1108,11 @@ namespace IMS.wrSales {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void getSoldProductsByDateCompletedEventHandler(object sender, getSoldProductsByDateCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getSoldProductsByDateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1066,11 +1134,11 @@ namespace IMS.wrSales {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void getSoldProductsByDatesCompletedEventHandler(object sender, getSoldProductsByDatesCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getSoldProductsByDatesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1092,11 +1160,11 @@ namespace IMS.wrSales {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void getSoldProductsByInvoiceNoCompletedEventHandler(object sender, getSoldProductsByInvoiceNoCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getSoldProductsByInvoiceNoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1118,11 +1186,11 @@ namespace IMS.wrSales {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void getProfitLossByDateCompletedEventHandler(object sender, getProfitLossByDateCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getProfitLossByDateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1144,11 +1212,11 @@ namespace IMS.wrSales {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void getProfitLossByDatesCompletedEventHandler(object sender, getProfitLossByDatesCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getProfitLossByDatesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1170,11 +1238,11 @@ namespace IMS.wrSales {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void SalesToCustomerByIDCompletedEventHandler(object sender, SalesToCustomerByIDCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SalesToCustomerByIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1196,11 +1264,11 @@ namespace IMS.wrSales {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void SalesToCustomerByDatesCompletedEventHandler(object sender, SalesToCustomerByDatesCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SalesToCustomerByDatesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1208,6 +1276,58 @@ namespace IMS.wrSales {
         private object[] results;
         
         internal SalesToCustomerByDatesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Server2Client Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Server2Client)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void UpdateSalesCompletedEventHandler(object sender, UpdateSalesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class UpdateSalesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal UpdateSalesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Server2Client Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Server2Client)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void UpdateSaleDetailCompletedEventHandler(object sender, UpdateSaleDetailCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class UpdateSaleDetailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal UpdateSaleDetailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

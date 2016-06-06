@@ -22,6 +22,9 @@ namespace IMS.Forms
         public frmSelect()
         {
             InitializeComponent();
+            dtpDtOn.DateTime = DateTime.Now.Date;
+            dtpDtFr.DateTime = DateTime.Now.Date;
+            dtpDtTo.DateTime = DateTime.Now.Date;
             Check();
         }
 
@@ -29,6 +32,9 @@ namespace IMS.Forms
         {
             InitializeComponent();
             Check();
+            dtpDtOn.DateTime = DateTime.Now.Date;
+            dtpDtFr.DateTime = DateTime.Now.Date;
+            dtpDtTo.DateTime = DateTime.Now.Date;
             rdoInv.Enabled = false;
             txtInv.Enabled = false;
         }
@@ -37,7 +43,9 @@ namespace IMS.Forms
         {
             InitializeComponent();
             Check();
-
+            dtpDtOn.DateTime = DateTime.Now.Date;
+            dtpDtFr.DateTime = DateTime.Now.Date;
+            dtpDtTo.DateTime = DateTime.Now.Date;
         }
 
         void Check()

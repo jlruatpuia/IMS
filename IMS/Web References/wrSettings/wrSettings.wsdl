@@ -33,6 +33,16 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ConnString">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConnStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetServiceInvoiceNo">
         <s:complexType>
           <s:sequence>
@@ -45,6 +55,81 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="GetServiceInvoiceNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddServicing">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sv" type="tns:Servicing" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Servicing">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="InvoiceNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddServicingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddServicingResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Server2Client">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dataTable">
+            <s:complexType>
+              <s:sequence>
+                <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="dataSet">
+            <s:complexType>
+              <s:sequence>
+                <s:element ref="s:schema" />
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetServicingByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dtfr" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServicingByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetServicingByDateResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServicingByDates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dtfr" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtto" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServicingByDatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetServicingByDatesResult" type="s:double" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -62,11 +147,35 @@
   <wsdl:message name="GetQuickInvoiceNoSoapOut">
     <wsdl:part name="parameters" element="tns:GetQuickInvoiceNoResponse" />
   </wsdl:message>
+  <wsdl:message name="ConnStringSoapIn">
+    <wsdl:part name="parameters" element="tns:ConnString" />
+  </wsdl:message>
+  <wsdl:message name="ConnStringSoapOut">
+    <wsdl:part name="parameters" element="tns:ConnStringResponse" />
+  </wsdl:message>
   <wsdl:message name="GetServiceInvoiceNoSoapIn">
     <wsdl:part name="parameters" element="tns:GetServiceInvoiceNo" />
   </wsdl:message>
   <wsdl:message name="GetServiceInvoiceNoSoapOut">
     <wsdl:part name="parameters" element="tns:GetServiceInvoiceNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddServicingSoapIn">
+    <wsdl:part name="parameters" element="tns:AddServicing" />
+  </wsdl:message>
+  <wsdl:message name="AddServicingSoapOut">
+    <wsdl:part name="parameters" element="tns:AddServicingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServicingByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServicingByDate" />
+  </wsdl:message>
+  <wsdl:message name="GetServicingByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServicingByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServicingByDatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServicingByDates" />
+  </wsdl:message>
+  <wsdl:message name="GetServicingByDatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServicingByDatesResponse" />
   </wsdl:message>
   <wsdl:portType name="wrSettingsSoap">
     <wsdl:operation name="GetInvoiceNo">
@@ -77,9 +186,25 @@
       <wsdl:input message="tns:GetQuickInvoiceNoSoapIn" />
       <wsdl:output message="tns:GetQuickInvoiceNoSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="ConnString">
+      <wsdl:input message="tns:ConnStringSoapIn" />
+      <wsdl:output message="tns:ConnStringSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetServiceInvoiceNo">
       <wsdl:input message="tns:GetServiceInvoiceNoSoapIn" />
       <wsdl:output message="tns:GetServiceInvoiceNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddServicing">
+      <wsdl:input message="tns:AddServicingSoapIn" />
+      <wsdl:output message="tns:AddServicingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServicingByDate">
+      <wsdl:input message="tns:GetServicingByDateSoapIn" />
+      <wsdl:output message="tns:GetServicingByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServicingByDates">
+      <wsdl:input message="tns:GetServicingByDatesSoapIn" />
+      <wsdl:output message="tns:GetServicingByDatesSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="wrSettingsSoap" type="tns:wrSettingsSoap">
@@ -102,8 +227,44 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ConnString">
+      <soap:operation soapAction="http://tempuri.org/ConnString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetServiceInvoiceNo">
       <soap:operation soapAction="http://tempuri.org/GetServiceInvoiceNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddServicing">
+      <soap:operation soapAction="http://tempuri.org/AddServicing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicingByDate">
+      <soap:operation soapAction="http://tempuri.org/GetServicingByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicingByDates">
+      <soap:operation soapAction="http://tempuri.org/GetServicingByDates" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -132,8 +293,44 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ConnString">
+      <soap12:operation soapAction="http://tempuri.org/ConnString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetServiceInvoiceNo">
       <soap12:operation soapAction="http://tempuri.org/GetServiceInvoiceNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddServicing">
+      <soap12:operation soapAction="http://tempuri.org/AddServicing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicingByDate">
+      <soap12:operation soapAction="http://tempuri.org/GetServicingByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicingByDates">
+      <soap12:operation soapAction="http://tempuri.org/GetServicingByDates" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

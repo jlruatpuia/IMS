@@ -5,6 +5,7 @@ using IMS.Codes;
 using System;
 using IMS.Forms;
 using IMS.Controls;
+using MySql.Data.MySqlClient;
 
 namespace IMS
 {
@@ -99,6 +100,8 @@ namespace IMS
             LoadControl(uc);
             MainRibbon.MergeRibbon(uc.ribbonControl1);
             MainRibbon.SelectedPage = MainRibbon.MergedRibbon.SelectedPage;
+            //uc.rpPreview.Visible = true;
+            //uc.rpPreview.MergeOrder = 2;
         }
 
         private void bClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -152,19 +155,55 @@ namespace IMS
         private void bbAckup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FolderBrowserDialog fbd = new FolderBrowserDialog();
+            string file = null;
+            string constring = null;
             fbd.RootFolder = System.Environment.SpecialFolder.Desktop;
-            if(fbd.ShowDialog() == DialogResult.OK)
+            if (fbd.ShowDialog() == DialogResult.OK)
             {
-                File.Copy(Application.StartupPath + "/ims.mdb", fbd.SelectedPath + "/DB_BACKUP_" + DateTime.Now.Day.ToString("00") + DateTime.Now.Month.ToString("00") + DateTime.Now.Year.ToString() + ".bkp");
+               file = fbd.SelectedPath + "\\DB_BACKUP_" + DateTime.Now.Day.ToString("00") + DateTime.Now.Month.ToString("00") + DateTime.Now.Year.ToString() + ".sql";
+            }
+            wrSettings.wrSettings stg = new wrSettings.wrSettings();
+            constring = stg.ConnString();
+            
+            using (MySqlConnection conn = new MySqlConnection(constring))
+            {
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    using (MySqlBackup mb = new MySqlBackup(cmd))
+                    {
+                        cmd.Connection = conn;
+                        conn.Open();
+                        mb.ExportToFile(file);
+                        conn.Close();
+                    }
+                }
             }
         }
 
         private void bRestore_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            OpenFileDialog sfd = new OpenFileDialog() { Filter = "Backup File (*.bkp)|*.bkp|All Files (*.*)|*.*" };
+            wrSettings.wrSettings stg = new wrSettings.wrSettings();
+            string file = null;
+            OpenFileDialog sfd = new OpenFileDialog() { Filter = "Backup File (*.sql)|*.sql|All Files (*.*)|*.*" };
             if(sfd.ShowDialog() == DialogResult.OK)
             {
-                File.Copy(sfd.FileName, Application.StartupPath + "/ims.mdb", true);
+                //File.Copy(sfd.FileName, Application.StartupPath + "/ims.mdb", true);
+                file = sfd.FileName;
+            }
+            string constring = stg.ConnString();
+            //string file = "C:\\backup.sql";
+            using (MySqlConnection conn = new MySqlConnection(constring))
+            {
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    using (MySqlBackup mb = new MySqlBackup(cmd))
+                    {
+                        cmd.Connection = conn;
+                        conn.Open();
+                        mb.ImportFromFile(file);
+                        conn.Close();
+                    }
+                }
             }
         }
 
@@ -177,6 +216,12 @@ namespace IMS
         private void bRInvoice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmRevisedInvoice frm = new frmRevisedInvoice();
+            frm.ShowDialog();
+        }
+
+        private void bServicing_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmServicing frm = new frmServicing();
             frm.ShowDialog();
         }
     }

@@ -29,13 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleDataBar formatConditionRuleDataBar1 = new DevExpress.XtraEditors.FormatConditionRuleDataBar();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategory));
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleDataBar formatConditionRuleDataBar2 = new DevExpress.XtraEditors.FormatConditionRuleDataBar();
+            this.colNOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.grd = new DevExpress.XtraGrid.GridControl();
+            this.grv = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colCID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCNM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
+            this.bNew = new DevExpress.XtraBars.BarButtonItem();
+            this.bEdit = new DevExpress.XtraBars.BarButtonItem();
+            this.bDel = new DevExpress.XtraBars.BarButtonItem();
+            this.bFind = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -52,19 +60,12 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.bNew = new DevExpress.XtraBars.BarButtonItem();
-            this.bEdit = new DevExpress.XtraBars.BarButtonItem();
-            this.bDel = new DevExpress.XtraBars.BarButtonItem();
-            this.bFind = new DevExpress.XtraBars.BarButtonItem();
-            this.grd = new DevExpress.XtraGrid.GridControl();
-            this.grv = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colCID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCNM = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNOP = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dp.SuspendLayout();
@@ -77,10 +78,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
+            // 
+            // colNOP
+            // 
+            this.colNOP.Caption = "No of Products";
+            this.colNOP.FieldName = "NoOfProducts";
+            this.colNOP.Name = "colNOP";
+            this.colNOP.OptionsColumn.AllowEdit = false;
+            this.colNOP.OptionsColumn.AllowFocus = false;
+            this.colNOP.OptionsColumn.ReadOnly = true;
+            this.colNOP.Visible = true;
+            this.colNOP.VisibleIndex = 1;
+            this.colNOP.Width = 304;
             // 
             // layoutControl1
             // 
@@ -93,16 +105,53 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // layoutControlGroup1
+            // grd
             // 
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem4});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(633, 328);
-            this.layoutControlGroup1.TextVisible = false;
+            this.grd.Location = new System.Drawing.Point(12, 12);
+            this.grd.MainView = this.grv;
+            this.grd.MenuManager = this.barManager1;
+            this.grd.Name = "grd";
+            this.grd.Size = new System.Drawing.Size(609, 304);
+            this.grd.TabIndex = 4;
+            this.grd.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grv});
+            // 
+            // grv
+            // 
+            this.grv.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colCID,
+            this.colCNM,
+            this.colNOP});
+            gridFormatRule1.Column = this.colNOP;
+            gridFormatRule1.Name = "Format0";
+            formatConditionRuleDataBar1.MinimumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            formatConditionRuleDataBar1.PredefinedName = null;
+            gridFormatRule1.Rule = formatConditionRuleDataBar1;
+            this.grv.FormatRules.Add(gridFormatRule1);
+            this.grv.GridControl = this.grd;
+            this.grv.Name = "grv";
+            this.grv.OptionsView.ShowGroupPanel = false;
+            // 
+            // colCID
+            // 
+            this.colCID.Caption = "gridColumn1";
+            this.colCID.FieldName = "ID";
+            this.colCID.Name = "colCID";
+            this.colCID.OptionsColumn.AllowEdit = false;
+            this.colCID.OptionsColumn.AllowFocus = false;
+            this.colCID.OptionsColumn.ReadOnly = true;
+            // 
+            // colCNM
+            // 
+            this.colCNM.Caption = "Category Name";
+            this.colCNM.FieldName = "CategoryName";
+            this.colCNM.Name = "colCNM";
+            this.colCNM.OptionsColumn.AllowEdit = false;
+            this.colCNM.OptionsColumn.AllowFocus = false;
+            this.colCNM.OptionsColumn.ReadOnly = true;
+            this.colCNM.Visible = true;
+            this.colCNM.VisibleIndex = 0;
+            this.colCNM.Width = 392;
             // 
             // barManager1
             // 
@@ -137,6 +186,41 @@
             this.bar1.OptionsBar.DrawDragBorder = false;
             this.bar1.OptionsBar.UseWholeRow = true;
             this.bar1.Text = "Tools";
+            // 
+            // bNew
+            // 
+            this.bNew.Caption = "&New";
+            this.bNew.Glyph = ((System.Drawing.Image)(resources.GetObject("bNew.Glyph")));
+            this.bNew.Id = 0;
+            this.bNew.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bNew.LargeGlyph")));
+            this.bNew.Name = "bNew";
+            this.bNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bNew_ItemClick);
+            // 
+            // bEdit
+            // 
+            this.bEdit.Caption = "&Edit";
+            this.bEdit.Glyph = ((System.Drawing.Image)(resources.GetObject("bEdit.Glyph")));
+            this.bEdit.Id = 1;
+            this.bEdit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bEdit.LargeGlyph")));
+            this.bEdit.Name = "bEdit";
+            this.bEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bEdit_ItemClick);
+            // 
+            // bDel
+            // 
+            this.bDel.Caption = "&Delete";
+            this.bDel.Glyph = ((System.Drawing.Image)(resources.GetObject("bDel.Glyph")));
+            this.bDel.Id = 2;
+            this.bDel.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bDel.LargeGlyph")));
+            this.bDel.Name = "bDel";
+            this.bDel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bDel_ItemClick);
+            // 
+            // bFind
+            // 
+            this.bFind.Caption = "&Find";
+            this.bFind.Glyph = ((System.Drawing.Image)(resources.GetObject("bFind.Glyph")));
+            this.bFind.Id = 3;
+            this.bFind.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bFind.LargeGlyph")));
+            this.bFind.Name = "bFind";
             // 
             // barDockControlTop
             // 
@@ -301,70 +385,19 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(513, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(10, 34);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(10, 41);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // bNew
+            // layoutControlGroup1
             // 
-            this.bNew.Caption = "&New";
-            this.bNew.Glyph = ((System.Drawing.Image)(resources.GetObject("bNew.Glyph")));
-            this.bNew.Id = 0;
-            this.bNew.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bNew.LargeGlyph")));
-            this.bNew.Name = "bNew";
-            this.bNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bNew_ItemClick);
-            // 
-            // bEdit
-            // 
-            this.bEdit.Caption = "&Edit";
-            this.bEdit.Glyph = ((System.Drawing.Image)(resources.GetObject("bEdit.Glyph")));
-            this.bEdit.Id = 1;
-            this.bEdit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bEdit.LargeGlyph")));
-            this.bEdit.Name = "bEdit";
-            this.bEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bEdit_ItemClick);
-            // 
-            // bDel
-            // 
-            this.bDel.Caption = "&Delete";
-            this.bDel.Glyph = ((System.Drawing.Image)(resources.GetObject("bDel.Glyph")));
-            this.bDel.Id = 2;
-            this.bDel.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bDel.LargeGlyph")));
-            this.bDel.Name = "bDel";
-            this.bDel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bDel_ItemClick);
-            // 
-            // bFind
-            // 
-            this.bFind.Caption = "&Find";
-            this.bFind.Glyph = ((System.Drawing.Image)(resources.GetObject("bFind.Glyph")));
-            this.bFind.Id = 3;
-            this.bFind.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bFind.LargeGlyph")));
-            this.bFind.Name = "bFind";
-            // 
-            // grd
-            // 
-            this.grd.Location = new System.Drawing.Point(12, 12);
-            this.grd.MainView = this.grv;
-            this.grd.MenuManager = this.barManager1;
-            this.grd.Name = "grd";
-            this.grd.Size = new System.Drawing.Size(609, 304);
-            this.grd.TabIndex = 4;
-            this.grd.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.grv});
-            // 
-            // grv
-            // 
-            this.grv.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colCID,
-            this.colCNM,
-            this.colNOP});
-            gridFormatRule2.Column = this.colNOP;
-            gridFormatRule2.Name = "Format0";
-            formatConditionRuleDataBar2.MinimumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
-            formatConditionRuleDataBar2.PredefinedName = null;
-            gridFormatRule2.Rule = formatConditionRuleDataBar2;
-            this.grv.FormatRules.Add(gridFormatRule2);
-            this.grv.GridControl = this.grd;
-            this.grv.Name = "grv";
-            this.grv.OptionsView.ShowGroupPanel = false;
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem4});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(633, 328);
+            this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem4
             // 
@@ -374,39 +407,6 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(613, 308);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
-            // 
-            // colCID
-            // 
-            this.colCID.Caption = "gridColumn1";
-            this.colCID.FieldName = "ID";
-            this.colCID.Name = "colCID";
-            this.colCID.OptionsColumn.AllowEdit = false;
-            this.colCID.OptionsColumn.AllowFocus = false;
-            this.colCID.OptionsColumn.ReadOnly = true;
-            // 
-            // colCNM
-            // 
-            this.colCNM.Caption = "Category Name";
-            this.colCNM.FieldName = "CategoryName";
-            this.colCNM.Name = "colCNM";
-            this.colCNM.OptionsColumn.AllowEdit = false;
-            this.colCNM.OptionsColumn.AllowFocus = false;
-            this.colCNM.OptionsColumn.ReadOnly = true;
-            this.colCNM.Visible = true;
-            this.colCNM.VisibleIndex = 0;
-            this.colCNM.Width = 392;
-            // 
-            // colNOP
-            // 
-            this.colNOP.Caption = "No of Products";
-            this.colNOP.FieldName = "NoOfProducts";
-            this.colNOP.Name = "colNOP";
-            this.colNOP.OptionsColumn.AllowEdit = false;
-            this.colNOP.OptionsColumn.AllowFocus = false;
-            this.colNOP.OptionsColumn.ReadOnly = true;
-            this.colNOP.Visible = true;
-            this.colNOP.VisibleIndex = 1;
-            this.colNOP.Width = 304;
             // 
             // frmCategory
             // 
@@ -429,7 +429,8 @@
             this.Text = "Categories";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             this.dp.ResumeLayout(false);
@@ -442,11 +443,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

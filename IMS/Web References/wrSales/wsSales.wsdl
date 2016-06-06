@@ -240,6 +240,34 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="UpdateSales">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s" type="tns:Sale" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSalesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateSalesResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSaleDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sd" type="tns:SaleDetail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSaleDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateSaleDetailResult" type="tns:Server2Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="AddSaleSoapIn">
@@ -320,6 +348,18 @@
   <wsdl:message name="SalesToCustomerByDatesSoapOut">
     <wsdl:part name="parameters" element="tns:SalesToCustomerByDatesResponse" />
   </wsdl:message>
+  <wsdl:message name="UpdateSalesSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSales" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSalesSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSaleDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSaleDetail" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSaleDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSaleDetailResponse" />
+  </wsdl:message>
   <wsdl:portType name="wsSalesSoap">
     <wsdl:operation name="AddSale">
       <wsdl:input message="tns:AddSaleSoapIn" />
@@ -372,6 +412,14 @@
     <wsdl:operation name="SalesToCustomerByDates">
       <wsdl:input message="tns:SalesToCustomerByDatesSoapIn" />
       <wsdl:output message="tns:SalesToCustomerByDatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSales">
+      <wsdl:input message="tns:UpdateSalesSoapIn" />
+      <wsdl:output message="tns:UpdateSalesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSaleDetail">
+      <wsdl:input message="tns:UpdateSaleDetailSoapIn" />
+      <wsdl:output message="tns:UpdateSaleDetailSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="wsSalesSoap" type="tns:wsSalesSoap">
@@ -493,6 +541,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UpdateSales">
+      <soap:operation soapAction="http://tempuri.org/UpdateSales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSaleDetail">
+      <soap:operation soapAction="http://tempuri.org/UpdateSaleDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="wsSalesSoap12" type="tns:wsSalesSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -606,6 +672,24 @@
     </wsdl:operation>
     <wsdl:operation name="SalesToCustomerByDates">
       <soap12:operation soapAction="http://tempuri.org/SalesToCustomerByDates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSales">
+      <soap12:operation soapAction="http://tempuri.org/UpdateSales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSaleDetail">
+      <soap12:operation soapAction="http://tempuri.org/UpdateSaleDetail" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

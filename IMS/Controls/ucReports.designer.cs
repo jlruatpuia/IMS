@@ -283,12 +283,10 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.rpPreview = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPage();
             this.printPreviewRibbonPageGroup2 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             this.printPreviewRibbonPageGroup3 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             this.printPreviewRibbonPageGroup4 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             this.printPreviewRibbonPageGroup5 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
-            this.printPreviewRibbonPageGroup6 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             this.printPreviewRibbonPageGroup7 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerRibbonController1)).BeginInit();
@@ -408,8 +406,7 @@
             this.ribbonControl1.MaxItemId = 72;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.rpReports,
-            this.rpPreview});
+            this.rpReports});
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemProgressBar1,
             this.repositoryItemZoomTrackBar1});
@@ -1964,7 +1961,12 @@
             this.rpReports.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup2,
-            this.ribbonPageGroup3});
+            this.ribbonPageGroup3,
+            this.printPreviewRibbonPageGroup2,
+            this.printPreviewRibbonPageGroup3,
+            this.printPreviewRibbonPageGroup4,
+            this.printPreviewRibbonPageGroup5,
+            this.printPreviewRibbonPageGroup7});
             this.rpReports.MergeOrder = 0;
             this.rpReports.Name = "rpReports";
             this.rpReports.Text = "Reports";
@@ -1994,19 +1996,6 @@
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.ShowCaptionButton = false;
             this.ribbonPageGroup3.Text = "Account Statement";
-            // 
-            // rpPreview
-            // 
-            this.rpPreview.ContextSpecifier = this.documentViewerRibbonController1;
-            this.rpPreview.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.printPreviewRibbonPageGroup2,
-            this.printPreviewRibbonPageGroup3,
-            this.printPreviewRibbonPageGroup4,
-            this.printPreviewRibbonPageGroup5,
-            this.printPreviewRibbonPageGroup6,
-            this.printPreviewRibbonPageGroup7});
-            this.rpPreview.Name = "rpPreview";
-            this.rpPreview.Text = "Print Preview";
             // 
             // printPreviewRibbonPageGroup2
             // 
@@ -2077,18 +2066,6 @@
             this.printPreviewRibbonPageGroup5.Name = "printPreviewRibbonPageGroup5";
             this.printPreviewRibbonPageGroup5.ShowCaptionButton = false;
             this.printPreviewRibbonPageGroup5.Text = "Zoom";
-            // 
-            // printPreviewRibbonPageGroup6
-            // 
-            this.printPreviewRibbonPageGroup6.AllowTextClipping = false;
-            this.printPreviewRibbonPageGroup6.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewRibbonPageGroup6.Glyph = global::IMS.PrintRibbonControllerResources.RibbonPrintPreview_Watermark;
-            this.printPreviewRibbonPageGroup6.ItemLinks.Add(this.bPageColor);
-            this.printPreviewRibbonPageGroup6.ItemLinks.Add(this.bWatermark);
-            this.printPreviewRibbonPageGroup6.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Background;
-            this.printPreviewRibbonPageGroup6.Name = "printPreviewRibbonPageGroup6";
-            this.printPreviewRibbonPageGroup6.ShowCaptionButton = false;
-            this.printPreviewRibbonPageGroup6.Text = "Page Background";
             // 
             // printPreviewRibbonPageGroup7
             // 
@@ -2217,12 +2194,10 @@
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem bExpXLSX;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem bExpRTF;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem bExpIMG;
-        private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPage rpPreview;
         private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup2;
         private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup3;
         private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup4;
         private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup5;
-        private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup6;
         private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup7;
         public DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage rpReports;

@@ -48,6 +48,7 @@
             this.bRestore = new DevExpress.XtraBars.BarButtonItem();
             this.bQuickSell = new DevExpress.XtraBars.BarButtonItem();
             this.bRInvoice = new DevExpress.XtraBars.BarButtonItem();
+            this.bServicing = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgSales = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgProduct = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -61,7 +62,6 @@
             this.nbiViewCustomer = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiViewReports = new DevExpress.XtraNavBar.NavBarItem();
             this.dlaf = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.bServicing = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.MainRibbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splt)).BeginInit();
             this.splt.SuspendLayout();
@@ -248,6 +248,15 @@
             this.bRInvoice.Name = "bRInvoice";
             this.bRInvoice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bRInvoice_ItemClick);
             // 
+            // bServicing
+            // 
+            this.bServicing.Caption = "Servicing";
+            this.bServicing.Glyph = ((System.Drawing.Image)(resources.GetObject("bServicing.Glyph")));
+            this.bServicing.Id = 20;
+            this.bServicing.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bServicing.LargeGlyph")));
+            this.bServicing.Name = "bServicing";
+            this.bServicing.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bServicing_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -375,14 +384,6 @@
             this.nbiViewReports.Name = "nbiViewReports";
             this.nbiViewReports.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiViewReports.SmallImage")));
             this.nbiViewReports.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiViewReports_LinkClicked);
-            // 
-            // bServicing
-            // 
-            this.bServicing.Caption = "Servicing";
-            this.bServicing.Glyph = ((System.Drawing.Image)(resources.GetObject("bServicing.Glyph")));
-            this.bServicing.Id = 20;
-            this.bServicing.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bServicing.LargeGlyph")));
-            this.bServicing.Name = "bServicing";
             // 
             // MainForm
             // 

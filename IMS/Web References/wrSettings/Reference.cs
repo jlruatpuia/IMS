@@ -20,10 +20,11 @@ namespace IMS.wrSettings {
     using System.Web.Services.Protocols;
     using System.Xml.Serialization;
     using System.ComponentModel;
+    using System.Data;
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="wrSettingsSoap", Namespace="http://tempuri.org/")]
@@ -33,7 +34,15 @@ namespace IMS.wrSettings {
         
         private System.Threading.SendOrPostCallback GetQuickInvoiceNoOperationCompleted;
         
+        private System.Threading.SendOrPostCallback ConnStringOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetServiceInvoiceNoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AddServicingOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetServicingByDateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetServicingByDatesOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -80,7 +89,19 @@ namespace IMS.wrSettings {
         public event GetQuickInvoiceNoCompletedEventHandler GetQuickInvoiceNoCompleted;
         
         /// <remarks/>
+        public event ConnStringCompletedEventHandler ConnStringCompleted;
+        
+        /// <remarks/>
         public event GetServiceInvoiceNoCompletedEventHandler GetServiceInvoiceNoCompleted;
+        
+        /// <remarks/>
+        public event AddServicingCompletedEventHandler AddServicingCompleted;
+        
+        /// <remarks/>
+        public event GetServicingByDateCompletedEventHandler GetServicingByDateCompleted;
+        
+        /// <remarks/>
+        public event GetServicingByDatesCompletedEventHandler GetServicingByDatesCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetInvoiceNo", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -147,6 +168,33 @@ namespace IMS.wrSettings {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ConnString", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string ConnString() {
+            object[] results = this.Invoke("ConnString", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ConnStringAsync() {
+            this.ConnStringAsync(null);
+        }
+        
+        /// <remarks/>
+        public void ConnStringAsync(object userState) {
+            if ((this.ConnStringOperationCompleted == null)) {
+                this.ConnStringOperationCompleted = new System.Threading.SendOrPostCallback(this.OnConnStringOperationCompleted);
+            }
+            this.InvokeAsync("ConnString", new object[0], this.ConnStringOperationCompleted, userState);
+        }
+        
+        private void OnConnStringOperationCompleted(object arg) {
+            if ((this.ConnStringCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ConnStringCompleted(this, new ConnStringCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetServiceInvoiceNo", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public string GetServiceInvoiceNo(System.DateTime dt, string ShortName) {
             object[] results = this.Invoke("GetServiceInvoiceNo", new object[] {
@@ -178,6 +226,95 @@ namespace IMS.wrSettings {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AddServicing", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Server2Client AddServicing(Servicing sv) {
+            object[] results = this.Invoke("AddServicing", new object[] {
+                        sv});
+            return ((Server2Client)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void AddServicingAsync(Servicing sv) {
+            this.AddServicingAsync(sv, null);
+        }
+        
+        /// <remarks/>
+        public void AddServicingAsync(Servicing sv, object userState) {
+            if ((this.AddServicingOperationCompleted == null)) {
+                this.AddServicingOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAddServicingOperationCompleted);
+            }
+            this.InvokeAsync("AddServicing", new object[] {
+                        sv}, this.AddServicingOperationCompleted, userState);
+        }
+        
+        private void OnAddServicingOperationCompleted(object arg) {
+            if ((this.AddServicingCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AddServicingCompleted(this, new AddServicingCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetServicingByDate", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public double GetServicingByDate(System.DateTime dtfr) {
+            object[] results = this.Invoke("GetServicingByDate", new object[] {
+                        dtfr});
+            return ((double)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetServicingByDateAsync(System.DateTime dtfr) {
+            this.GetServicingByDateAsync(dtfr, null);
+        }
+        
+        /// <remarks/>
+        public void GetServicingByDateAsync(System.DateTime dtfr, object userState) {
+            if ((this.GetServicingByDateOperationCompleted == null)) {
+                this.GetServicingByDateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetServicingByDateOperationCompleted);
+            }
+            this.InvokeAsync("GetServicingByDate", new object[] {
+                        dtfr}, this.GetServicingByDateOperationCompleted, userState);
+        }
+        
+        private void OnGetServicingByDateOperationCompleted(object arg) {
+            if ((this.GetServicingByDateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetServicingByDateCompleted(this, new GetServicingByDateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetServicingByDates", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public double GetServicingByDates(System.DateTime dtfr, System.DateTime dtto) {
+            object[] results = this.Invoke("GetServicingByDates", new object[] {
+                        dtfr,
+                        dtto});
+            return ((double)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetServicingByDatesAsync(System.DateTime dtfr, System.DateTime dtto) {
+            this.GetServicingByDatesAsync(dtfr, dtto, null);
+        }
+        
+        /// <remarks/>
+        public void GetServicingByDatesAsync(System.DateTime dtfr, System.DateTime dtto, object userState) {
+            if ((this.GetServicingByDatesOperationCompleted == null)) {
+                this.GetServicingByDatesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetServicingByDatesOperationCompleted);
+            }
+            this.InvokeAsync("GetServicingByDates", new object[] {
+                        dtfr,
+                        dtto}, this.GetServicingByDatesOperationCompleted, userState);
+        }
+        
+        private void OnGetServicingByDatesOperationCompleted(object arg) {
+            if ((this.GetServicingByDatesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetServicingByDatesCompleted(this, new GetServicingByDatesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -197,11 +334,149 @@ namespace IMS.wrSettings {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Servicing {
+        
+        private int idField;
+        
+        private string invoiceNoField;
+        
+        private System.DateTime serviceDateField;
+        
+        private string descriptionField;
+        
+        private double amountField;
+        
+        /// <remarks/>
+        public int ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string InvoiceNo {
+            get {
+                return this.invoiceNoField;
+            }
+            set {
+                this.invoiceNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime ServiceDate {
+            get {
+                return this.serviceDateField;
+            }
+            set {
+                this.serviceDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                this.amountField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Server2Client {
+        
+        private int countField;
+        
+        private double valueField;
+        
+        private string messageField;
+        
+        private System.Data.DataTable dataTableField;
+        
+        private System.Data.DataSet dataSetField;
+        
+        /// <remarks/>
+        public int Count {
+            get {
+                return this.countField;
+            }
+            set {
+                this.countField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Message {
+            get {
+                return this.messageField;
+            }
+            set {
+                this.messageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable dataTable {
+            get {
+                return this.dataTableField;
+            }
+            set {
+                this.dataTableField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet dataSet {
+            get {
+                return this.dataSetField;
+            }
+            set {
+                this.dataSetField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void GetInvoiceNoCompletedEventHandler(object sender, GetInvoiceNoCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetInvoiceNoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -223,11 +498,11 @@ namespace IMS.wrSettings {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void GetQuickInvoiceNoCompletedEventHandler(object sender, GetQuickInvoiceNoCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetQuickInvoiceNoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -249,11 +524,37 @@ namespace IMS.wrSettings {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void ConnStringCompletedEventHandler(object sender, ConnStringCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ConnStringCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ConnStringCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void GetServiceInvoiceNoCompletedEventHandler(object sender, GetServiceInvoiceNoCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetServiceInvoiceNoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -270,6 +571,84 @@ namespace IMS.wrSettings {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void AddServicingCompletedEventHandler(object sender, AddServicingCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AddServicingCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal AddServicingCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Server2Client Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Server2Client)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetServicingByDateCompletedEventHandler(object sender, GetServicingByDateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetServicingByDateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetServicingByDateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public double Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((double)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetServicingByDatesCompletedEventHandler(object sender, GetServicingByDatesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetServicingByDatesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetServicingByDatesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public double Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((double)(this.results[0]));
             }
         }
     }
